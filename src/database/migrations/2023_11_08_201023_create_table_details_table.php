@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 30);
             $table->string('col_name', 50);
-            $table->string('col_type', 50);
+            $table->foreignId('table_setting_id')->constrained('table_settings');
             $table->Integer('col_digits')->nullable();
             $table->boolean('col_nullable')->default(false);
             $table->string('col_default')->nullable();

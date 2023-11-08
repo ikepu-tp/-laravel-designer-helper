@@ -16,6 +16,7 @@ use Carbon\Carbon;
  * @property Carbon $deleted_at
  *
  * @property-read Form $form
+ * @property-read Form_element_attr[] $form_element_attrs
  */
 class Form_element extends BaseModel
 {
@@ -42,5 +43,13 @@ class Form_element extends BaseModel
     public function form()
     {
         return $this->belongsTo(Form::class);
+    }
+
+    /**
+     * @return  \Illuminate\Database\Eloquent\Relations\HasMany<Form_element_attr>|Form_element_attr[]
+     */
+    public function form_element_attrs()
+    {
+        return $this->hasMany(Form_element_attr::class);
     }
 }

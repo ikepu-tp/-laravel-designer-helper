@@ -16,6 +16,8 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
+ * @property-read Screen_class $screen_class
+ * @property-read Screen_progress $screen_progress
  * @property-read Form[] $forms
  * @property-read Screen_func[] $screen_funcs
  */
@@ -38,6 +40,22 @@ class Screen extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Screen_class
+     */
+    public function screen_class()
+    {
+        return $this->belongsTo(Screen_class::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Screen_progress
+     */
+    public function screen_progress()
+    {
+        return $this->belongsTo(Screen_progress::class);
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Form>|Form[]

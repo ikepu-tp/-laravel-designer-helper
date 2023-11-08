@@ -11,6 +11,8 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Functions[] $functions
  */
 class Func_user extends BaseModel
 {
@@ -27,4 +29,12 @@ class Func_user extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Functions>|Functions[]
+     */
+    public function functions()
+    {
+        return $this->hasMany(Functions::class);
+    }
 }

@@ -9,7 +9,7 @@ use Carbon\Carbon;
  * @property int $table_outline_id
  * @property string $name
  * @property string $col_name
- * @property string $col_type
+ * @property int $table_setting_id
  * @property int $col_digits
  * @property boolean $col_nullable
  * @property string $col_default
@@ -22,6 +22,7 @@ use Carbon\Carbon;
  * @property Carbon $deleted_at
  *
  * @property-read Table_outline $table_outline
+ * @property-read Table_setting $table_setting
  */
 class Table_detail extends BaseModel
 {
@@ -48,10 +49,18 @@ class Table_detail extends BaseModel
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Table_outline
      */
     public function table_outline()
     {
         return $this->belongsTo(Table_outline::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Table_setting
+     */
+    public function table_setting()
+    {
+        return $this->belongsTo(Table_setting::class);
     }
 }

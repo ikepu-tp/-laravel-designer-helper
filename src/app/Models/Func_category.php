@@ -16,6 +16,7 @@ use Carbon\Carbon;
  *
  * @property-read Func_category $parent_category
  * @property-read Func_category[] $children_categories
+ * @property-read Functions[] $functions
  */
 class Func_category extends BaseModel
 {
@@ -49,5 +50,13 @@ class Func_category extends BaseModel
     public function children_categories()
     {
         return $this->hasMany(Func_category::class, "cat_id");
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Functions>|Functions[]
+     */
+    public function functions()
+    {
+        return $this->hasMany(Functions::class);
     }
 }

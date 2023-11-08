@@ -16,6 +16,10 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
+ * @property-read Func_category $func_category
+ * @property-read Func_class $func_class
+ * @property-read Func_user $func_user
+ * @property-read Func_progress $func_progress
  * @property-read Screen_func[] $screen_funcs
  */
 class Functions extends BaseModel
@@ -44,6 +48,38 @@ class Functions extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_category
+     */
+    public function func_category()
+    {
+        return $this->belongsTo(Func_category::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_class
+     */
+    public function func_class()
+    {
+        return $this->belongsTo(Func_class::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_user
+     */
+    public function func_user()
+    {
+        return $this->belongsTo(Func_user::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_progress
+     */
+    public function func_progress()
+    {
+        return $this->belongsTo(Func_progress::class);
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen_func>|Screen_func[]

@@ -11,6 +11,8 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Screen[] $screens
  */
 class Screen_class extends BaseModel
 {
@@ -27,4 +29,12 @@ class Screen_class extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen>|Screen[]
+     */
+    public function screens()
+    {
+        return $this->hasMany(Screen::class);
+    }
 }
