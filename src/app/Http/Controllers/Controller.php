@@ -1,11 +1,11 @@
 <?php
 
-namespace ikepu_tp\PackageName\app\Http\Controllers;
+namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as BaseController;
-use ikepu_tp\PackageName\app\Http\Requests\StoreRequest;
-use ikepu_tp\PackageName\app\Http\Requests\UpdateRequest;
+use ikepu_tp\DesignerHelper\app\Http\Requests\StoreRequest;
+use ikepu_tp\DesignerHelper\app\Http\Requests\UpdateRequest;
 
 class Controller extends BaseController
 {

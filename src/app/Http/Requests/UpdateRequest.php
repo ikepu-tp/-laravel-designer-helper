@@ -1,6 +1,6 @@
 <?php
 
-namespace ikepu_tp\PackageName\app\Http\Requests;
+namespace ikepu_tp\DesignerHelper\app\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
