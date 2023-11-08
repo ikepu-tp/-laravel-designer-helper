@@ -15,6 +15,8 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Screen_func[] $screen_funcs
  */
 class Functions extends BaseModel
 {
@@ -42,4 +44,12 @@ class Functions extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen_func>|Screen_func[]
+     */
+    public function screen_funcs()
+    {
+        return $this->hasMany(Screen_func::class);
+    }
 }

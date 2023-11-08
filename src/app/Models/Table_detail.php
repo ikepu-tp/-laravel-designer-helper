@@ -6,6 +6,7 @@ use Carbon\Carbon;
 
 /**
  * @property int $id
+ * @property int $table_outline_id
  * @property string $name
  * @property string $col_name
  * @property string $col_type
@@ -19,6 +20,8 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Table_outline $table_outline
  */
 class Table_detail extends BaseModel
 {
@@ -43,4 +46,12 @@ class Table_detail extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function table_outline()
+    {
+        return $this->belongsTo(Table_outline::class);
+    }
 }

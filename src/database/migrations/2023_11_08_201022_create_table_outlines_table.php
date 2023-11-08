@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::connection(config("designer.connection"))->create('table_outlines', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('table_outline_id')->constrained('');
             $table->string('name');
             $table->text('note')->nullable();
             $table->boolean('timestamps')->default(true);

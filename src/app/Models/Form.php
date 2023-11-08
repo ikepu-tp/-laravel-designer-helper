@@ -12,6 +12,9 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Screen $screen
+ * @property-read Form_element[] $form_elements
  */
 class Form extends BaseModel
 {
@@ -29,4 +32,20 @@ class Form extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Screen
+     */
+    public function screen()
+    {
+        return $this->belongsTo(Screen::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Form_element>|Form_element[]
+     */
+    public function form_elements()
+    {
+        return $this->hasMany(Form_element::class);
+    }
 }

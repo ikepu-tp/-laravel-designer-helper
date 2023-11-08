@@ -11,6 +11,9 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Screen $screen
+ * @property-read Functions $function
  */
 class Screen_func extends BaseModel
 {
@@ -27,4 +30,20 @@ class Screen_func extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Screen
+     */
+    public function screen()
+    {
+        return $this->belongsTo(Screen::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Functions
+     */
+    public function function()
+    {
+        return $this->belongsTo(Functions::class);
+    }
 }

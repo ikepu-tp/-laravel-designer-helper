@@ -13,6 +13,8 @@ use Carbon\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Table_detail[] $table_details
  */
 class Table_outline extends BaseModel
 {
@@ -31,4 +33,12 @@ class Table_outline extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Table_detail>|Table_detail[]
+     */
+    public function table_details()
+    {
+        return $this->hasMany(Table_detail::class);
+    }
 }
