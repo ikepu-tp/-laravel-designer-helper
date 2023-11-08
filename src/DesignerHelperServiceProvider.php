@@ -1,19 +1,19 @@
 <?php
 
-namespace ikepu_tp\PackageName;
+namespace ikepu_tp\DesignerHelper;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 
-class PackageNameServiceProvider extends ServiceProvider
+class DesignerHelperServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/package-name.php', 'package-name');
+        $this->mergeConfigFrom(__DIR__ . '/config/laravel-designer-helper.php', 'laravel-designer-helper');
     }
 
     /**
@@ -24,9 +24,9 @@ class PackageNameServiceProvider extends ServiceProvider
         $this->registerPublishing();
         $this->defineRoutes();
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->loadViewsFrom(__DIR__ . "/resources/views", "PackageName");
+        $this->loadViewsFrom(__DIR__ . "/resources/views", "DesignerHelper");
         Paginator::useBootstrap();
-        Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "PackageName");
+        Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "DesignerHelper");
     }
 
     /**
@@ -37,8 +37,8 @@ class PackageNameServiceProvider extends ServiceProvider
         if (!$this->app->runningInConsole()) return;
 
         $this->publishes([
-            __DIR__ . '/config/package-name.php' => base_path('config/package-name.php'),
-        ], 'PackageName-config');
+            __DIR__ . '/config/laravel-designer-helper.php' => base_path('config/laravel-designer-helper.php'),
+        ], 'DesignerHelper-config');
 
 
         $this->publishMigration();
@@ -61,13 +61,13 @@ class PackageNameServiceProvider extends ServiceProvider
     private function publishView(): void
     {
         $this->publishes([
-            __DIR__ . '/resources/views' => resource_path('views/vendor/PackageName'),
-        ], 'PackageName-views');
+            __DIR__ . '/resources/views' => resource_path('views/vendor/DesignerHelper'),
+        ], 'DesignerHelper-views');
     }
 
     private function publishAsset(): void
     {
-        $this->publishes([], 'PackageName-assets');
+        $this->publishes([], 'DesignerHelper-assets');
     }
 
     /**

@@ -1,8 +1,6 @@
-# Laravel Package Template
+# Laravel Designer Helper
 
-This is a template for Laravel Package. Please copy this repository and edit.
-
-[日本語版](https://qiita.com/ikepu-tp)
+"laravel-designer-helper" is a powerful toolset for simplifying the design and development of Laravel applications while adhering to best practices. This library supports developers in effective architectural design, model creation, database migrations, controller generation, and view design.
 
 ## How to use
 

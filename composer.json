@@ -1,14 +1,14 @@
 {
-    "name": "ikepu-tp/package-name",
+    "name": "ikepu-tp/laravel-designer-helper",
     "description": "",
     "type": "library",
     "keywords": [
         "laravel"
     ],
-    "homepage": "https://rainbow-patissier.com",
+    "homepage": "https://ikepu-tp.com",
     "support": {
-        "issues": "https://github.com/ikepu-tp/package-name/issues",
-        "source": "https://github.com/ikepu-tp/package-name"
+        "issues": "https://github.com/ikepu-tp/laravel-designer-helper/issues",
+        "source": "https://github.com/ikepu-tp/laravel-designer-helper"
     },
     "require": {
         "php": "^8.2",
@@ -17,19 +17,19 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "ikepu_tp\\PackageName\\": "./src/"
+            "ikepu_tp\\DesignerHelper\\": "./src/"
         }
     },
     "authors": [
         {
-            "name": "Yuma Ikeda",
-            "email": "programing@rainbow-patissier.com"
+            "name": "ikepu-tp",
+            "email": "program@ikepu-tp.com"
         }
     ],
     "extra": {
         "laravel": {
             "providers": [
-                "ikepu_tp\\PackageName\\PackageNameServiceProvider"
+                "ikepu_tp\\DesignerHelper\\DesignerHelperServiceProvider"
             ]
         }
     }
