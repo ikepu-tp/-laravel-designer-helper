@@ -6,6 +6,12 @@ use Carbon\Carbon;
 
 /**
  * @property int $id
+ * @property string $name
+ * @property int $func_category_id
+ * @property int $func_class_id
+ * @property int $func_user_id
+ * @property int $func_progress_id
+ * @property string $outline
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
@@ -26,6 +32,12 @@ class Functions extends BaseModel
      */
     protected $casts = [
         'id' => 'integer',
+        'name' => 'string',
+        'func_category_id' => 'integer',
+        'func_class_id' => 'integer',
+        'func_user_id' => 'integer',
+        'func_progress_id' => 'integer',
+        'outline' => 'string',
         "created_at" => "datetime",
         "updated_at" => "datetime",
         "deleted_at" => "datetime",

@@ -6,6 +6,12 @@ use Carbon\Carbon;
 
 /**
  * @property int $id
+ * @property string $name
+ * @property int $screen_class_id
+ * @property int $screen_progress_id
+ * @property string $note
+ * @property string $url
+ * @property string $route_name
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
@@ -19,6 +25,12 @@ class Screen extends BaseModel
      */
     protected $casts = [
         'id' => 'integer',
+        'name' => 'string',
+        'screen_class_id' => 'integer',
+        'screen_progress_id' => 'integer',
+        'note' => 'string',
+        'url' => 'string',
+        'route_name' => 'string',
         "created_at" => "datetime",
         "updated_at" => "datetime",
         "deleted_at" => "datetime",

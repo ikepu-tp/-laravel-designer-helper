@@ -6,6 +6,11 @@ use Carbon\Carbon;
 
 /**
  * @property int $id
+ * @property int $form_id
+ * @property string $label
+ * @property string $name
+ * @property string $type
+ * @property string $note
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
@@ -19,6 +24,11 @@ class Form_element extends BaseModel
      */
     protected $casts = [
         'id' => 'integer',
+        'form_id' => 'integer',
+        'label' => 'string',
+        'name' => 'string',
+        'type' => 'string',
+        'note' => 'string',
         "created_at" => "datetime",
         "updated_at" => "datetime",
         "deleted_at" => "datetime",

@@ -6,6 +6,8 @@ use Carbon\Carbon;
 
 /**
  * @property int $id
+ * @property int $screen_id
+ * @property int $function_id
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
@@ -19,6 +21,8 @@ class Screen_func extends BaseModel
      */
     protected $casts = [
         'id' => 'integer',
+        'screen_id' => 'integer',
+        'function_id' => 'integer',
         "created_at" => "datetime",
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
