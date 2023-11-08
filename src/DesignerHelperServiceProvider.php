@@ -13,7 +13,7 @@ class DesignerHelperServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/laravel-designer-helper.php', 'laravel-designer-helper');
+        $this->mergeConfigFrom(__DIR__ . '/config/designer.php', 'designer');
     }
 
     /**
@@ -37,7 +37,7 @@ class DesignerHelperServiceProvider extends ServiceProvider
         if (!$this->app->runningInConsole()) return;
 
         $this->publishes([
-            __DIR__ . '/config/laravel-designer-helper.php' => base_path('config/laravel-designer-helper.php'),
+            __DIR__ . '/config/designer.php' => base_path('config/designer.php'),
         ], 'DesignerHelper-config');
 
 
