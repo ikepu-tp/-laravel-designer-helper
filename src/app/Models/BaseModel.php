@@ -1,6 +1,6 @@
 <?php
 
-namespace ikepu_tp\PackageName\app\Models;
+namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  */
-class Models extends Model
+class BaseModel extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -25,6 +25,9 @@ class Models extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        "created_at" => "datetime",
+        "updated_at" => "datetime",
+        "deleted_at" => "datetime",
     ];
 
     /**
@@ -33,4 +36,10 @@ class Models extends Model
      * @var array
      */
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
+
+    function __construct(array $attributes = [])
+    {
+        $this->connection = config("designer.connection");
+        parent::__construct($attributes);
+    }
 }
