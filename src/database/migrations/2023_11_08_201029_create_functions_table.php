@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('func_class_id')->constrained('func_classes');
             $table->foreignId('func_user_id')->constrained('func_users');
             $table->foreignId('func_progress_id')->constrained('func_progresses');
-            $table->text('outline')->unique();
+            $table->text('outline')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
