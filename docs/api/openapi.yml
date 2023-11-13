@@ -1,0 +1,67 @@
+openapi: '3.0.3'
+info:
+  title: 'Laravel Designer Helper API Documentation'
+  version: 1.0.0
+  x-logo:
+    url: './api/logo.png'
+  description: |
+    ## リクエストヘッダ
+
+    | キー         | 値     | 説明             |
+    | ------------ | ------ | ---------------- |
+    | Accept       | string | application/json |
+    | Content-Type | string | application/json |
+    | X-NONCE      | string | レスポンス整合性確認用。任意の文字列。 |
+    | X-XSRF-TOKEN | string | API認証キー |
+
+    ## レスポンスリソース
+    <SchemaDefinition schemaRef="#/components/schemas/ResponseResource" />
+
+    ### ステータスリソース
+    <SchemaDefinition schemaRef="#/components/schemas/StatusResource" />
+
+    ## 成功レスポンス
+    <SchemaDefinition schemaRef="#/components/schemas/SuccessResource" />
+
+    ### ページネーションメタリソース
+    <SchemaDefinition schemaRef="#/components/schemas/MetaResource" />
+
+    ## エラーレスポンス
+    <SchemaDefinition schemaRef="#/components/schemas/FailedResource" />
+
+    ### エラーリソース
+    <SchemaDefinition schemaRef="#/components/schemas/ErrorResource" />
+
+  license:
+    name: MIT
+    url: 'https://github.com/ikepu-tp/unifestill/blob/a360d012bc517f9c633f3cf034c13e32dc340150/LICENSE'
+
+servers:
+  - url: http://localhost/api
+    description: 開発環境サーバ
+
+tags:
+  - name: project
+    x-displayName: プロジェクト
+    description: |
+      ## プロジェクト
+      <SchemaDefinition schemaRef="#/components/schemas/ProjectResource" />
+
+x-tagGroups:
+  - name: プロジェクト
+    tags:
+      - project
+
+paths:
+  $ref: './paths/index.yaml'
+
+components:
+  parameters:
+    $ref: './components/parameters/index.yaml'
+  schemas:
+    $ref: './components/schemas/index.yaml'
+  securitySchemes:
+    cookieAuth:
+      name: 'X-XSRF-TOKEN'
+      type: 'apiKey'
+      in: 'cookie'

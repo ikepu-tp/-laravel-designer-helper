@@ -1,0 +1,4 @@
+/v1/projects:
+  $ref: "./project/non-id.yaml"
+/v1/projects/{project}:
+  $ref: "./project/id.yaml"

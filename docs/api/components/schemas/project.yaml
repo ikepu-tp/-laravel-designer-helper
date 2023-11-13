@@ -1,0 +1,25 @@
+type: object
+required:
+  - name
+properties:
+  projectId:
+    type: string
+    description: プロジェクトID
+    example: projectId
+    readOnly: true
+  name:
+    type: string
+    description: システム名
+    example: project name
+    maxLength: 30
+  sub_name:
+    type: string
+    description: サブシステム名
+    example: sub project name
+    maxLength: 30
+  note:
+    type: string
+    description: システムに関する備考
+    example: This is a example note.
+    maxLength: 100
+    nullable: true

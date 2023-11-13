@@ -1,0 +1,10 @@
+services:
+    redoc:
+        image: redocly/redoc
+        environment:
+            SPEC_URL: api/openapi.yml
+        volumes:
+            #- ./docs/api/openapi.yml:/usr/share/nginx/html/openapi.yml
+            - ./docs/api:/usr/share/nginx/html/api
+        ports:
+            - 3032:80

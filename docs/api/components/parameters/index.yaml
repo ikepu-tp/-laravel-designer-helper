@@ -1,0 +1,67 @@
+ACCEPT:
+  name: Accept
+  in: header
+  schema:
+    type: string
+    example: application/json
+CONTENT-TYPE:
+  name: Content-Type
+  in: header
+  schema:
+    type: string
+    example: application/json
+TOKEN:
+  name: X-XSRF-TOKEN
+  in: header
+  schema:
+    type: string
+    example: ey******
+NONCE:
+  name: X-NONCE
+  in: header
+  schema:
+    type: string
+    example: NONCE
+PER:
+  name: per
+  in: query
+  schema:
+    type: number
+    example: 100
+  required: false
+PAGE:
+  name: page
+  in: query
+  schema:
+    type: number
+    example: 1
+  required: false
+ORDER:
+  name: order
+  in: query
+  description: |
+    取得順
+    |key|note|
+    |-|-|
+    |asc|古い順に取得|
+    |desc|新しい順に取得|
+  schema:
+    type: string
+    example: asc
+  required: false
+KEYWORD:
+  name: keyword
+  in: query
+  description: キーワード検索
+  schema:
+    type: string
+    example: keyword
+  required: false
+Project:
+  name: project
+  in: path
+  description: プロジェクトID
+  schema:
+    type: number
+    example: 1
+  required: true
