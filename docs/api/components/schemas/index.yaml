@@ -28,3 +28,13 @@ TableSettingResource:
   $ref: './table_setting.yaml'
 TableOutlineResource:
   $ref: './table_outline.yaml'
+FunctionCategoryResource:
+  $ref: "./func_category.yaml"
+FunctionClassResource:
+  $ref: "./func_class.yaml"
+FunctionProgressResource:
+  $ref: "./func_progress.yaml"
+FunctionUserResource:
+  $ref: "./func_user.yaml"
+FunctionResource:
+  $ref: "./function.yaml"

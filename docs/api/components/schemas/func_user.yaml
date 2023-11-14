@@ -1,0 +1,19 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: ユーザー範囲ID
+    example: 1
+    readOnly: true
+  name:
+    type: string
+    description: ユーザー範囲
+    example: project name
+    maxLength: 30
+  note:
+    type: string
+    description: ユーザー範囲に関する備考
+    example: This is a example note.
+    nullable: true

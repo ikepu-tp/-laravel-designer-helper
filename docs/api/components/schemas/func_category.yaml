@@ -1,0 +1,28 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: カテゴリーID
+    example: 1
+    readOnly: true
+  deps:
+    type: int
+    description: カテゴリー粒度
+    example: 1
+  name:
+    type: string
+    description: カテゴリー
+    example: project name
+    maxLength: 30
+  cat_id:
+    type: int
+    description: 親カテゴリー
+    example: 1
+    nullable: true
+  note:
+    type: string
+    description: カテゴリーに関する備考
+    example: This is a example note.
+    nullable: true

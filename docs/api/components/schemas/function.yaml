@@ -1,0 +1,27 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: 機能ID
+    example: 1
+    readOnly: true
+  name:
+    type: string
+    description: 機能
+    example: project name
+    maxLength: 250
+  function_category:
+    $ref: "#/components/schemas/FunctionCategoryResource"
+  function_class:
+    $ref: "#/components/schemas/FunctionClassResource"
+  function_user:
+    $ref: "#/components/schemas/FunctionUserResource"
+  function_progress:
+    $ref: "#/components/schemas/FunctionProgressResource"
+  outline:
+    type: string
+    description: 機能概要
+    example: This is a example outline.
+    nullable: true
