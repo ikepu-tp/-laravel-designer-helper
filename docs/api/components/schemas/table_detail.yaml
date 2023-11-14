@@ -2,6 +2,11 @@ type: object
 required:
   - name
 properties:
+  id:
+    type: int
+    description: テーブル詳細ID
+    example: 1
+    readOnly: true
   name:
     type: string
     description: テーブル名
@@ -12,7 +17,30 @@ properties:
     description: カラム名
     example: column_name
   table_setting:
-    $ref: "#/components/schemas/TableSettingResource"
+    type: object
+    properties:
+      id:
+        type: int
+        description: テーブル設定ID
+        example: 1
+      model_cast:
+        type: string
+        description: モデルキャスト型
+        example: boolean
+        maxLength: 50
+        readOnly: true
+      db_type:
+        type: string
+        description: テーブルカラム型
+        example: boolean
+        maxLength: 50
+        readOnly: true
+      php_type:
+        type: string
+        description: PHPDoc
+        example: boolean
+        maxLength: 50
+        readOnly: true
   col_digits:
     type: integer
     description: 文字数制限

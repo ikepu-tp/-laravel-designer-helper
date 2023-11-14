@@ -4,6 +4,11 @@ required:
   - timestamp
   - soft_delete
 properties:
+  id:
+    type: int
+    description: テーブルID
+    example: 1
+    readOnly: true
   name:
     type: string
     description: テーブル名

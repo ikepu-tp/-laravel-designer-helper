@@ -4,6 +4,11 @@ required:
   - db_type
   - php_type
 properties:
+  id:
+    type: int
+    description: テーブル設定ID
+    example: 1
+    readOnly: true
   model_cast:
     type: string
     description: モデルキャスト型
