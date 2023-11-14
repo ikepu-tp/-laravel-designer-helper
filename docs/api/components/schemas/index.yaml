@@ -28,6 +28,8 @@ TableSettingResource:
   $ref: './table_setting.yaml'
 TableOutlineResource:
   $ref: './table_outline.yaml'
+TableDetailResource:
+  $ref: './table_detail.yaml'
 FunctionCategoryResource:
   $ref: "./func_category.yaml"
 FunctionClassResource:
