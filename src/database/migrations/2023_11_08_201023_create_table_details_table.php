@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::connection(config("designer.connection"))->create('table_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('table_outline_id')->constrained('table_outlines');
             $table->string('name', 30);
             $table->string('col_name', 50);
             $table->foreignId('table_setting_id')->constrained('table_settings');

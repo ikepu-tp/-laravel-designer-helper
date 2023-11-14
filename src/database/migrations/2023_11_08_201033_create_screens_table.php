@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::connection(config("designer.connection"))->create('screens', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
             $table->string('name', 50);
             $table->foreignId('screen_class_id')->constrained('screen_classes');
             $table->foreignId('screen_progress_id')->constrained('screen_progresses');

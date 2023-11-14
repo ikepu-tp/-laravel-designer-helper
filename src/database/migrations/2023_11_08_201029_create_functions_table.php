@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::connection(config("designer.connection"))->create('functions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
             $table->string('name')->unique();
             $table->foreignId('func_category_id')->constrained('func_categories');
             $table->foreignId('func_class_id')->constrained('func_classes');

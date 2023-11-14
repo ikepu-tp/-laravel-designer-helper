@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::connection(config("designer.connection"))->create('exceptions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
             $table->string('name', 50)->unique();
             $table->string('http_code');
             $table->string('error_code');

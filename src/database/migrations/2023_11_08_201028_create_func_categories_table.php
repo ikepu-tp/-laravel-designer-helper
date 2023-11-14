@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::connection(config("designer.connection"))->create('func_categories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
             $table->tinyInteger('deps');
             $table->string('name', 50);
             $table->foreignId('cat_id')->nullable();

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::connection(config("designer.connection"))->create('forms', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained('projects');
             $table->string('name', 50);
             $table->foreignId('screen_id')->constrained('screens');
             $table->text('note')->nullable();
