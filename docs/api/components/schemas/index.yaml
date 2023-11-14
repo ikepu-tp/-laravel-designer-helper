@@ -24,3 +24,7 @@ MetaResource:
   $ref: './basic/meta.yaml'
 ProjectResource:
   $ref: './project.yaml'
+TableSettingResource:
+  $ref: './table_setting.yaml'
+TableOutlineResource:
+  $ref: './table_outline.yaml'

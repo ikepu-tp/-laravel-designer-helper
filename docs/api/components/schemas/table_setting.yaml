@@ -1,0 +1,21 @@
+type: object
+required:
+  - model_cast
+  - db_type
+  - php_type
+properties:
+  model_cast:
+    type: string
+    description: モデルキャスト型
+    example: boolean
+    maxLength: 50
+  db_type:
+    type: string
+    description: テーブルカラム型
+    example: boolean
+    maxLength: 50
+  php_type:
+    type: string
+    description: PHPDoc
+    example: boolean
+    maxLength: 50

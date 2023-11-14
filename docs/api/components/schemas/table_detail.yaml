@@ -1,0 +1,51 @@
+type: object
+required:
+  - name
+properties:
+  name:
+    type: string
+    description: テーブル名
+    example: table_names
+    maxLength: 30
+  col_name:
+    type: string
+    description: カラム名
+    example: column_name
+  table_setting:
+    $ref: "#/components/schemas/TableSettingResource"
+  col_digits:
+    type: integer
+    description: 文字数制限
+    example: 50
+    nullable: true
+  col_nullable:
+    type: boolean
+    description: カラム値のNULL
+    example: false
+    default: false
+  col_default:
+    type: string
+    description: デフォルト値
+    example: column_name
+    nullable: true
+  col_unique:
+    type: boolean
+    description: 一位性
+    example: false
+    default: false
+  col_primary:
+    type: boolean
+    description: プライマリー列
+    example: false
+    default: false
+  col_index:
+    type: boolean
+    description: インデックス
+    example: false
+    default: false
+  note:
+    type: string
+    description: 備考
+    example: This is a example note.
+    maxLength: 100
+    nullable: true

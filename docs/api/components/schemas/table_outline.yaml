@@ -1,0 +1,27 @@
+type: object
+required:
+  - name
+  - timestamp
+  - soft_delete
+properties:
+  name:
+    type: string
+    description: テーブル名
+    example: table name
+    maxLength: 50
+  note:
+    type: string
+    description: 備考
+    example: This is a example note.
+    maxLength: 100
+    nullable: true
+  timestamp:
+    type: boolean
+    description: タイムスタンプの保存
+    example: true
+    default: true
+  soft_delete:
+    type: boolean
+    description: 論理削除
+    example: true
+    default: true
