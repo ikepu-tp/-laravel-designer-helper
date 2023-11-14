@@ -1,0 +1,21 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: フォームID
+    example: 1
+    readOnly: true
+  name:
+    type: string
+    description: フォーム名
+    example: project name
+    maxLength: 50
+  screen:
+    $ref: "#/components/schemas/ScreenResource"
+  note:
+    type: string
+    description: フォームに関する備考
+    example: This is an example.
+    nullable: true

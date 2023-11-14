@@ -1,0 +1,31 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: フォームID
+    example: 1
+    readOnly: true
+  form:
+    $ref: "#/components/schemas/FormResource"
+  label:
+    type: string
+    description: 項目名
+    example: project name
+    maxLength: 50
+  name:
+    type: string
+    description: 項目キー
+    example: project name
+    maxLength: 50
+  type:
+    type: string
+    description: 項目タイプ
+    example: project name
+    maxLength: 50
+  note:
+    type: string
+    description: フォームに関する備考
+    example: This is an example.
+    nullable: true

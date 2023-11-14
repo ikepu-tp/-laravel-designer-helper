@@ -1,0 +1,19 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: フォーム設定ID
+    example: 1
+    readOnly: true
+  name:
+    type: string
+    description: フォーム設定名
+    example: project name
+    maxLength: 30
+  type:
+    type: string
+    description: フォーム設定項目タイプ
+    example: input
+    maxLength: 30

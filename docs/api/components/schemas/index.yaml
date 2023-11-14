@@ -48,3 +48,11 @@ ScreenProgressResource:
   $ref: "./screen_progress.yaml"
 ScreenResource:
   $ref: "./screen.yaml"
+FormElementAttrResource:
+  $ref: "./form_element_attr.yaml"
+FormElementResource:
+  $ref: "./form_element.yaml"
+FormSettingResource:
+  $ref: "./form_setting.yaml"
+FormResource:
+  $ref: "./form.yaml"
