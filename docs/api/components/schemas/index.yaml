@@ -38,3 +38,13 @@ FunctionUserResource:
   $ref: "./func_user.yaml"
 FunctionResource:
   $ref: "./function.yaml"
+ExceptionResource:
+  $ref: "./exception.yaml"
+ScreenClassResource:
+  $ref: "./screen_class.yaml"
+ScreenFunctionResource:
+  $ref: "./screen_func.yaml"
+ScreenProgressResource:
+  $ref: "./screen_progress.yaml"
+ScreenResource:
+  $ref: "./screen.yaml"

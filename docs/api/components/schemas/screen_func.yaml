@@ -1,0 +1,13 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: 画面関連機能ID
+    example: 1
+    readOnly: true
+  screen_id:
+    $ref: "#/components/schemas/ScreenResource"
+  function_id:
+    $ref: "#/components/schemas/FunctionResource"

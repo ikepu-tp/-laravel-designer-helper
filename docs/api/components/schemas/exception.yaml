@@ -1,0 +1,40 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: int
+    description: 例外ID
+    example: 1
+    readOnly: true
+  name:
+    type: string
+    description: 例外
+    example: project name
+    maxLength: 30
+  http_code:
+    type: string
+    description: HTTPコード
+    example: 404
+  error_code:
+    type: string
+    description: エラーコード
+    example: 404000
+  abstract:
+    type: string
+    description: アブストラクト
+    example: ERROR
+  title:
+    type: string
+    description: タイトル
+    example: エラーが発生
+  default_message:
+    type: string
+    description: 初期メッセージ
+    example: エラーが発生しました。
+    nullable: true
+  note:
+    type: string
+    description: 例外に関する備考
+    example: This is a example note.
+    nullable: true
