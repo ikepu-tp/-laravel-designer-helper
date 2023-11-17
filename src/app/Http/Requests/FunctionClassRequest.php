@@ -4,7 +4,7 @@ namespace ikepu_tp\DesignerHelper\app\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class FunctionClassRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,6 +21,7 @@ class UpdateRequest extends FormRequest
      */
     public function rules(): array
     {
+        if (!$this->routeIs(["*.store", "*.update"])) return [];
         return [];
     }
 

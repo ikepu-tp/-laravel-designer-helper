@@ -2,5 +2,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group([], function () {
+Route::scopeBindings()->group(function () {
 });
