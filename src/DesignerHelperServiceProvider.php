@@ -24,9 +24,9 @@ class DesignerHelperServiceProvider extends ServiceProvider
         $this->registerPublishing();
         $this->defineRoutes();
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->loadViewsFrom(__DIR__ . "/resources/views", "DesignerHelper");
-        Paginator::useBootstrap();
-        Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "DesignerHelper");
+        //$this->loadViewsFrom(__DIR__ . "/resources/views", "DesignerHelper");
+        //Paginator::useBootstrap();
+        //Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "DesignerHelper");
     }
 
     /**
@@ -41,9 +41,9 @@ class DesignerHelperServiceProvider extends ServiceProvider
         ], 'DesignerHelper-config');
 
 
-        $this->publishMigration();
-        $this->publishView();
-        $this->publishAsset();
+        //$this->publishMigration();
+        //$this->publishView();
+        //$this->publishAsset();
     }
 
     private function publishMigration(): void
