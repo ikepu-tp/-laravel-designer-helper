@@ -1,0 +1,67 @@
+get:
+  tags:
+    - screen_progress
+  summary: 画面進捗詳細
+  description: 画面進捗の詳細を取得します
+  operationId: screen_progressShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/ScreenProgress"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: 画面進捗の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ScreenProgressResource"
+put:
+  tags:
+    - screen_progress
+  summary: 画面進捗更新
+  description: 画面進捗を更新します
+  operationId: screen_progressUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/ScreenProgress"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ScreenProgressResource'
+  responses:
+    200:
+      description: 画面進捗更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ScreenProgressResource"
+delete:
+  tags:
+    - screen_progress
+  summary: 画面進捗削除
+  description: 画面進捗を削除します
+  operationId: screen_progressDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/ScreenProgress"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: 画面進捗削除

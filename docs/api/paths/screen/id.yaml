@@ -1,0 +1,67 @@
+get:
+  tags:
+    - screen
+  summary: 画面詳細
+  description: 画面の詳細を取得します
+  operationId: screenShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Screen"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: 画面の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ScreenResource"
+put:
+  tags:
+    - screen
+  summary: 画面更新
+  description: 画面を更新します
+  operationId: screenUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Screen"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ScreenResource'
+  responses:
+    200:
+      description: 画面更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ScreenResource"
+delete:
+  tags:
+    - screen
+  summary: 画面削除
+  description: 画面を削除します
+  operationId: screenDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Screen"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: 画面削除

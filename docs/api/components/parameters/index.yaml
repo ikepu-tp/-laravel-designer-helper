@@ -129,3 +129,26 @@ FunctionUser:
     type: number
     example: 1
   required: true
+Screen:
+  name: screen
+  in: path
+  description: 画面ID
+  schema:
+    type: number
+    example: 1
+  required: true
+ScreenClass:
+  name: class
+  in: path
+  description: 画面区分ID
+  schema:
+    type: number
+    example: 1
+ScreenProgress:
+  name: progress
+  in: path
+  description: 画面進捗ID
+  schema:
+    type: number
+    example: 1
+  required: true

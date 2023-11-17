@@ -34,3 +34,15 @@
   $ref: func/non-id.yaml
 /v1/projects/{project}/functions/{function}:
   $ref: func/id.yaml
+/v1/projects/{project}/screens/classes:
+  $ref: screen/class/non-id.yaml
+/v1/projects/{project}/screens/classes/{class}:
+  $ref: screen/class/id.yaml
+/v1/projects/{project}/screens/progresses:
+  $ref: screen/progress/non-id.yaml
+/v1/projects/{project}/screens/progresses/{progress}:
+  $ref: screen/progress/id.yaml
+/v1/projects/{project}/screens:
+  $ref: screen/non-id.yaml
+/v1/projects/{project}/screens/{screen}:
+  $ref: screen/id.yaml

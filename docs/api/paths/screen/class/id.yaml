@@ -1,0 +1,67 @@
+get:
+  tags:
+    - screen_class
+  summary: 画面区分詳細
+  description: 画面区分の詳細を取得します
+  operationId: screen_classShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/ScreenClass"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: 画面区分の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ScreenClassResource"
+put:
+  tags:
+    - screen_class
+  summary: 画面区分更新
+  description: 画面区分を更新します
+  operationId: screen_classUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/ScreenClass"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ScreenClassResource'
+  responses:
+    200:
+      description: 画面区分更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ScreenClassResource"
+delete:
+  tags:
+    - screen_class
+  summary: 画面区分削除
+  description: 画面区分を削除します
+  operationId: screen_classDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/ScreenClass"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: 画面区分削除
