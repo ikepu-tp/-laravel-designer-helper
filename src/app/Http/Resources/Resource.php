@@ -2,7 +2,7 @@
 
 namespace ikepu_tp\DesignerHelper\app\Http\Resources;
 
-use App\Exceptions\ErrorException;
+use ikepu_tp\DesignerHelper\app\Exceptions\ErrorException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
