@@ -1,67 +1,67 @@
 get:
   tags:
-    - table_setting
-  summary: テーブル設定詳細
-  description: テーブル設定の詳細を取得します
-  operationId: table_settingShow
+    - function_class
+  summary: 機能区分詳細
+  description: 機能区分の詳細を取得します
+  operationId: function_classShow
   parameters:
     - $ref: "#/components/parameters/ACCEPT"
     - $ref: "#/components/parameters/CONTENT-TYPE"
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
-    - $ref: "#/components/parameters/TableSetting"
+    - $ref: "#/components/parameters/Function"
   security:
     - cookieAuth: []
   responses:
     200:
-      description: テーブル設定の詳細
+      description: 機能区分の詳細
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/TableSettingResource"
+            $ref: "#/components/schemas/FunctionClassResource"
 put:
   tags:
-    - table_setting
-  summary: テーブル設定更新
-  description: テーブル設定を更新します
-  operationId: table_settingUpdate
+    - function_class
+  summary: 機能区分更新
+  description: 機能区分を更新します
+  operationId: function_classUpdate
   parameters:
     - $ref: "#/components/parameters/ACCEPT"
     - $ref: "#/components/parameters/CONTENT-TYPE"
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
-    - $ref: "#/components/parameters/TableSetting"
+    - $ref: "#/components/parameters/FunctionClass"
   security:
     - cookieAuth: []
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/TableSettingResource'
+          $ref: '#/components/schemas/FunctionClassResource'
   responses:
     200:
-      description: テーブル設定更新
+      description: 機能区分更新
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/TableSettingResource"
+            $ref: "#/components/schemas/FunctionClassResource"
 delete:
   tags:
-    - table_setting
-  summary: テーブル設定削除
-  description: テーブル設定を削除します
-  operationId: table_settingDelete
+    - function_class
+  summary: 機能区分削除
+  description: 機能区分を削除します
+  operationId: function_classDelete
   parameters:
     - $ref: "#/components/parameters/ACCEPT"
     - $ref: "#/components/parameters/CONTENT-TYPE"
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
-    - $ref: "#/components/parameters/TableSetting"
+    - $ref: "#/components/parameters/FunctionClass"
   security:
     - cookieAuth: []
   responses:
     204:
-      description: テーブル設定削除
+      description: 機能区分削除

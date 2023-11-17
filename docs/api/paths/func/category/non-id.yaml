@@ -1,9 +1,9 @@
 get:
   tags:
-    - table_setting
-  summary: テーブル設定一覧
-  description: テーブル設定の一覧を取得します
-  operationId: table_settingIndex
+    - function_category
+  summary: 機能カテゴリー一覧
+  description: 機能カテゴリーの一覧を取得します
+  operationId: function_categoryIndex
   parameters:
     - $ref: '#/components/parameters/ACCEPT'
     - $ref: '#/components/parameters/CONTENT-TYPE'
@@ -18,7 +18,7 @@ get:
     - cookieAuth: []
   responses:
     200:
-      description: テーブル設定の一覧
+      description: 機能カテゴリーの一覧
       content:
         application/json:
           schema:
@@ -34,13 +34,13 @@ get:
                   items:
                     type: array
                     items:
-                      $ref: '#/components/schemas/TableSettingResource'
+                      $ref: '#/components/schemas/FunctionCategoryResource'
 post:
   tags:
-    - table_setting
-  summary: テーブル設定登録
-  description: テーブル設定を登録します
-  operationId: table_settingStore
+    - function_category
+  summary: 機能カテゴリー登録
+  description: 機能カテゴリーを登録します
+  operationId: function_categoryStore
   parameters:
     - $ref: '#/components/parameters/ACCEPT'
     - $ref: '#/components/parameters/CONTENT-TYPE'
@@ -53,11 +53,11 @@ post:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/TableSettingResource'
+          $ref: '#/components/schemas/FunctionCategoryResource'
   responses:
     201:
-      description: テーブル設定登録
+      description: 機能カテゴリー登録
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/TableSettingResource'
+            $ref: '#/components/schemas/FunctionCategoryResource'

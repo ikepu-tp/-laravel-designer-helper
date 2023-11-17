@@ -14,3 +14,23 @@
   $ref: table/detail/non-id.yaml
 /v1/projects/{project}/tables/details/{details}:
   $ref: table/detail/id.yaml
+/v1/projects/{project}/functions/categories:
+  $ref: func/category/non-id.yaml
+/v1/projects/{project}/functions/categories/{category}:
+  $ref: func/category/id.yaml
+/v1/projects/{project}/functions/classes:
+  $ref: func/class/non-id.yaml
+/v1/projects/{project}/functions/classes/{class}:
+  $ref: func/class/id.yaml
+/v1/projects/{project}/functions/progresses:
+  $ref: func/progress/non-id.yaml
+/v1/projects/{project}/functions/progresses/{progress}:
+  $ref: func/progress/id.yaml
+/v1/projects/{project}/functions/users:
+  $ref: func/user/non-id.yaml
+/v1/projects/{project}/functions/users/{user}:
+  $ref: func/user/id.yaml
+/v1/projects/{project}/functions:
+  $ref: func/non-id.yaml
+/v1/projects/{project}/functions/{function}:
+  $ref: func/id.yaml

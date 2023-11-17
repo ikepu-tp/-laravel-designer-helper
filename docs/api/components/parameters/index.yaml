@@ -89,3 +89,43 @@ TableDetail:
     type: number
     example: 1
   required: true
+Function:
+  name: function
+  in: path
+  description: 機能ID
+  schema:
+    type: number
+    example: 1
+  required: true
+FunctionCategory:
+  name: category
+  in: path
+  description: 機能カテゴリーID
+  schema:
+    type: number
+    example: 1
+  required: true
+FunctionClass:
+  name: class
+  in: path
+  description: 機能区分ID
+  schema:
+    type: number
+    example: 1
+  required: true
+FunctionProgress:
+  name: progress
+  in: path
+  description: 機能進捗ID
+  schema:
+    type: number
+    example: 1
+  required: true
+FunctionUser:
+  name: user
+  in: path
+  description: 機能ユーザー範囲ID
+  schema:
+    type: number
+    example: 1
+  required: true

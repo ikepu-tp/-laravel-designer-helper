@@ -1,67 +1,67 @@
 get:
   tags:
-    - table_setting
-  summary: テーブル設定詳細
-  description: テーブル設定の詳細を取得します
-  operationId: table_settingShow
+    - function_progress
+  summary: 機能進捗詳細
+  description: 機能進捗の詳細を取得します
+  operationId: function_progressShow
   parameters:
     - $ref: "#/components/parameters/ACCEPT"
     - $ref: "#/components/parameters/CONTENT-TYPE"
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
-    - $ref: "#/components/parameters/TableSetting"
+    - $ref: "#/components/parameters/FunctionProgress"
   security:
     - cookieAuth: []
   responses:
     200:
-      description: テーブル設定の詳細
+      description: 機能進捗の詳細
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/TableSettingResource"
+            $ref: "#/components/schemas/FunctionProgressResource"
 put:
   tags:
-    - table_setting
-  summary: テーブル設定更新
-  description: テーブル設定を更新します
-  operationId: table_settingUpdate
+    - function_progress
+  summary: 機能進捗更新
+  description: 機能進捗を更新します
+  operationId: function_progressUpdate
   parameters:
     - $ref: "#/components/parameters/ACCEPT"
     - $ref: "#/components/parameters/CONTENT-TYPE"
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
-    - $ref: "#/components/parameters/TableSetting"
+    - $ref: "#/components/parameters/FunctionProgress"
   security:
     - cookieAuth: []
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/TableSettingResource'
+          $ref: '#/components/schemas/FunctionProgressResource'
   responses:
     200:
-      description: テーブル設定更新
+      description: 機能進捗更新
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/TableSettingResource"
+            $ref: "#/components/schemas/FunctionProgressResource"
 delete:
   tags:
-    - table_setting
-  summary: テーブル設定削除
-  description: テーブル設定を削除します
-  operationId: table_settingDelete
+    - function_progress
+  summary: 機能進捗削除
+  description: 機能進捗を削除します
+  operationId: function_progressDelete
   parameters:
     - $ref: "#/components/parameters/ACCEPT"
     - $ref: "#/components/parameters/CONTENT-TYPE"
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
-    - $ref: "#/components/parameters/TableSetting"
+    - $ref: "#/components/parameters/FunctionProgress"
   security:
     - cookieAuth: []
   responses:
     204:
-      description: テーブル設定削除
+      description: 機能進捗削除
