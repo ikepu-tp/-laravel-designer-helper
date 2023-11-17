@@ -1,0 +1,39 @@
+<?php
+
+namespace ikepu_tp\DesignerHelper\app\Http\Resources\Func;
+
+use ikepu_tp\DesignerHelper\app\Models\Func_category;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+/**
+ * @property Func_category $resource
+ */
+class FunctionCategoryResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     */
+    public function toArray(Request $request): array|null
+    {
+        return $this->createArray();
+    }
+
+    /**
+     * @return array|null
+     */
+    public function createArray(): array|null
+    {
+        if (empty($this->resource)) return null;
+
+        return [
+            "id" => $this->resource->id,
+            "deps" => $this->resource->deps,
+            "name" => $this->resource->name,
+            "cat_id" => $this->resource->cat_id,
+            "note" => $this->resource->note,
+            "created_at" => $this->resource->created_at,
+            "updated_at" => $this->resource->updated_at,
+        ];
+    }
+}
