@@ -1,0 +1,67 @@
+get:
+  tags:
+    - table_detail
+  summary: テーブル詳細詳細
+  description: テーブル詳細の詳細を取得します
+  operationId: table_detailShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableDetail"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: テーブル詳細の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/TableDetailResource"
+put:
+  tags:
+    - table_detail
+  summary: テーブル詳細更新
+  description: テーブル詳細を更新します
+  operationId: table_detailUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableDetail"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/TableDetailResource'
+  responses:
+    200:
+      description: テーブル詳細更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/TableDetailResource"
+delete:
+  tags:
+    - table_detail
+  summary: テーブル詳細削除
+  description: テーブル詳細を削除します
+  operationId: table_detailDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableDetail"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: テーブル詳細削除

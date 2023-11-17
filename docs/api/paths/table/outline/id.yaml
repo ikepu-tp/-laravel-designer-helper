@@ -1,0 +1,67 @@
+get:
+  tags:
+    - table_outline
+  summary: テーブル概要詳細
+  description: テーブル概要の詳細を取得します
+  operationId: table_outlineShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableOutline"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: テーブル概要の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/TableOutlineResource"
+put:
+  tags:
+    - table_outline
+  summary: テーブル概要更新
+  description: テーブル概要を更新します
+  operationId: table_outlineUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableOutline"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/TableOutlineResource'
+  responses:
+    200:
+      description: テーブル概要更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/TableOutlineResource"
+delete:
+  tags:
+    - table_outline
+  summary: テーブル概要削除
+  description: テーブル概要を削除します
+  operationId: table_outlineDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableOutline"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: テーブル概要削除

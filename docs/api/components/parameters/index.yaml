@@ -65,3 +65,27 @@ Project:
     type: number
     example: 1
   required: true
+TableSetting:
+  name: setting
+  in: path
+  description: テーブル設定ID
+  schema:
+    type: number
+    example: 1
+  required: true
+TableOutline:
+  name: outline
+  in: path
+  description: テーブル概要ID
+  schema:
+    type: number
+    example: 1
+  required: true
+TableDetail:
+  name: detail
+  in: path
+  description: テーブル詳細ID
+  schema:
+    type: number
+    example: 1
+  required: true

@@ -1,0 +1,67 @@
+get:
+  tags:
+    - table_setting
+  summary: テーブル設定詳細
+  description: テーブル設定の詳細を取得します
+  operationId: table_settingShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableSetting"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: テーブル設定の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/TableSettingResource"
+put:
+  tags:
+    - table_setting
+  summary: テーブル設定更新
+  description: テーブル設定を更新します
+  operationId: table_settingUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableSetting"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/TableSettingResource'
+  responses:
+    200:
+      description: テーブル設定更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/TableSettingResource"
+delete:
+  tags:
+    - table_setting
+  summary: テーブル設定削除
+  description: テーブル設定を削除します
+  operationId: table_settingDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableSetting"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: テーブル設定削除

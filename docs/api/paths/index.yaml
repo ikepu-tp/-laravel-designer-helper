@@ -2,3 +2,15 @@
   $ref: "./project/non-id.yaml"
 /v1/projects/{project}:
   $ref: "./project/id.yaml"
+/v1/projects/{project}/tables/settings:
+  $ref: table/setting/non-id.yaml
+/v1/projects/{project}/tables/settings/{setting}:
+  $ref: table/setting/id.yaml
+/v1/projects/{project}/tables/outlines:
+  $ref: table/outline/non-id.yaml
+/v1/projects/{project}/tables/outlines/{outline}:
+  $ref: table/outline/id.yaml
+/v1/projects/{project}/tables/details:
+  $ref: table/detail/non-id.yaml
+/v1/projects/{project}/tables/details/{details}:
+  $ref: table/detail/id.yaml

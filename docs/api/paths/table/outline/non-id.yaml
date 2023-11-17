@@ -1,0 +1,63 @@
+get:
+  tags:
+    - table_outline
+  summary: テーブル一覧
+  description: テーブル概要の一覧を取得します
+  operationId: table_outlineIndex
+  parameters:
+    - $ref: '#/components/parameters/ACCEPT'
+    - $ref: '#/components/parameters/CONTENT-TYPE'
+    - $ref: '#/components/parameters/NONCE'
+    - $ref: '#/components/parameters/TOKEN'
+    - $ref: '#/components/parameters/PER'
+    - $ref: '#/components/parameters/PAGE'
+    - $ref: '#/components/parameters/ORDER'
+    - $ref: '#/components/parameters/KEYWORD'
+    - $ref: "#/components/parameters/Project"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: テーブル概要の一覧
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: '#/components/schemas/StatusResource'
+              payloads:
+                type: object
+                properties:
+                  meta:
+                    $ref: '#/components/schemas/MetaResource'
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TableOutlineResource'
+post:
+  tags:
+    - table_outline
+  summary: テーブル概要登録
+  description: テーブル概要を登録します
+  operationId: table_outlineStore
+  parameters:
+    - $ref: '#/components/parameters/ACCEPT'
+    - $ref: '#/components/parameters/CONTENT-TYPE'
+    - $ref: '#/components/parameters/NONCE'
+    - $ref: '#/components/parameters/TOKEN'
+    - $ref: "#/components/parameters/Project"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/TableOutlineResource'
+  responses:
+    201:
+      description: テーブル概要登録
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TableOutlineResource'
