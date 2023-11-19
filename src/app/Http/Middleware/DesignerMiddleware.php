@@ -16,7 +16,7 @@ class DesignerMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!App::isLocal()) abort(404);
+        if (!App::environment("local", "testing")) abort(404);
         return $next($request);
     }
 }

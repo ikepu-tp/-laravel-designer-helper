@@ -15,9 +15,12 @@ use ikepu_tp\DesignerHelper\app\Http\Controllers\TableSettingController;
 use ikepu_tp\DesignerHelper\app\Http\Middleware\DesignerMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::scopeBindings()->prefix("designers")->middleware([
-    DesignerMiddleware::class,
-])->group(function () {
+Route::scopeBindings()->prefix("designers")->middleware(array_merge(
+    [
+        DesignerMiddleware::class,
+    ],
+    config("designer.middleware", [])
+))->group(function () {
     Route::prefix("v1")->group(function () {
         Route::prefix("projects/{project}")->group(function () {
             Route::prefix("tables")->group(function () {
