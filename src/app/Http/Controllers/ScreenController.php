@@ -4,6 +4,7 @@ namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Http\Requests\ScreenRequest;
+use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Screen;
 
 class ScreenController extends BaseController
@@ -26,7 +27,7 @@ class ScreenController extends BaseController
     /**
      * Display the specified resource.
      */
-    public function show(ScreenRequest $screenRequest, Screen $screen)
+    public function show(ScreenRequest $screenRequest, Project $project, Screen $screen)
     {
         //
     }
@@ -34,7 +35,7 @@ class ScreenController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(ScreenRequest $screenRequest, Screen $screen)
+    public function update(ScreenRequest $screenRequest, Project $project, Screen $screen)
     {
         //
     }
@@ -42,7 +43,7 @@ class ScreenController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ScreenRequest $screenRequest, Screen $screen)
+    public function destroy(ScreenRequest $screenRequest, Project $project, Screen $screen)
     {
         //
     }

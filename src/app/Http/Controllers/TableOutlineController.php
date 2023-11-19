@@ -4,6 +4,7 @@ namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Http\Requests\TableOutlineRequest;
+use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Table_outline;
 
 class TableOutlineController extends BaseController
@@ -26,7 +27,7 @@ class TableOutlineController extends BaseController
     /**
      * Display the specified resource.
      */
-    public function show(TableOutlineRequest $tableOutlineRequest, Table_outline $table_outline)
+    public function show(TableOutlineRequest $tableOutlineRequest, Project $project, Table_outline $table_outline)
     {
         //
     }
@@ -34,7 +35,7 @@ class TableOutlineController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(TableOutlineRequest $tableOutlineRequest, Table_outline $table_outline)
+    public function update(TableOutlineRequest $tableOutlineRequest, Project $project, Table_outline $table_outline)
     {
         //
     }
@@ -42,7 +43,7 @@ class TableOutlineController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TableOutlineRequest $tableOutlineRequest, Table_outline $table_outline)
+    public function destroy(TableOutlineRequest $tableOutlineRequest, Project $project, Table_outline $table_outline)
     {
         //
     }

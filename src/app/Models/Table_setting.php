@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\Table_settingFactory;
 
 /**
  * @property int $id
@@ -31,6 +32,8 @@ class Table_setting extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    protected static $factoryModel = Table_settingFactory::class;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Table_detail>|Table_detail[]

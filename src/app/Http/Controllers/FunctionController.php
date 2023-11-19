@@ -4,6 +4,7 @@ namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Http\Requests\FunctionRequest;
+use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Functions;
 
 class FunctionController extends BaseController
@@ -26,7 +27,7 @@ class FunctionController extends BaseController
     /**
      * Display the specified resource.
      */
-    public function show(FunctionRequest $functionRequest, Functions $functions)
+    public function show(FunctionRequest $functionRequest, Project $project, Functions $functions)
     {
         //
     }
@@ -34,7 +35,7 @@ class FunctionController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(FunctionRequest $functionRequest, Functions $functions)
+    public function update(FunctionRequest $functionRequest, Project $project, Functions $functions)
     {
         //
     }
@@ -42,7 +43,7 @@ class FunctionController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FunctionRequest $functionRequest, Functions $functions)
+    public function destroy(FunctionRequest $functionRequest, Project $project, Functions $functions)
     {
         //
     }

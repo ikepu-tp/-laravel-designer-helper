@@ -21,12 +21,12 @@ Route::scopeBindings()->prefix("designers")->middleware(array_merge(
     ],
     config("designer.middleware", [])
 ))->group(function () {
-    Route::prefix("v1")->group(function () {
+    Route::scopeBindings()->prefix("v1")->group(function () {
         Route::prefix("projects/{project}")->group(function () {
             Route::prefix("tables")->group(function () {
-                Route::apiResource("settings", TableSettingController::class)->names("table.setting");
-                Route::apiResource("outlines", TableOutlineController::class)->names("table.outline");
-                Route::apiResource("details", TableDetailController::class)->names("table.detail");
+                Route::apiResource("settings", TableSettingController::class)->parameter("settings", "table_setting")->names("table.setting");
+                Route::apiResource("outlines", TableOutlineController::class)->parameter("outlines", "table_outline")->names("table.outline");
+                Route::apiResource("details", TableDetailController::class)->parameter("details", "table_detail")->names("table.detail");
             });
             Route::prefix("functions")->group(function () {
                 Route::apiResource("categories", FunctionCategoryController::class)->names("function.category");

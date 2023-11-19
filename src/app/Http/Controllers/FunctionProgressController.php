@@ -4,7 +4,9 @@ namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Http\Requests\FunctionProgressRequest;
+use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Func_category;
+use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Func_progress;
 
 class FunctionProgressController extends BaseController
@@ -27,7 +29,7 @@ class FunctionProgressController extends BaseController
     /**
      * Display the specified resource.
      */
-    public function show(FunctionProgressRequest $functionProgressRequest, Func_progress $func_progress)
+    public function show(FunctionProgressRequest $functionProgressRequest, Project $project, Func_progress $func_progress)
     {
         //
     }
@@ -35,7 +37,7 @@ class FunctionProgressController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(FunctionProgressRequest $functionProgressRequest, Func_progress $func_progress)
+    public function update(FunctionProgressRequest $functionProgressRequest, Project $project, Func_progress $func_progress)
     {
         //
     }
@@ -43,7 +45,7 @@ class FunctionProgressController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FunctionProgressRequest $functionProgressRequest, Func_progress $func_progress)
+    public function destroy(FunctionProgressRequest $functionProgressRequest, Project $project, Func_progress $func_progress)
     {
         //
     }
