@@ -12,14 +12,14 @@ class TableOutlineController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(TableOutlineRequest $tableOutline, Project $project)
+    public function index(TableOutlineRequest $tableOutlineRequest, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TableOutlineRequest $tableOutline, Project $project)
+    public function store(TableOutlineRequest $tableOutlineRequest, Project $project)
     {
         //
     }

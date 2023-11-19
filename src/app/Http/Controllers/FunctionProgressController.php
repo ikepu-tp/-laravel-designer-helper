@@ -5,8 +5,6 @@ namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Http\Requests\FunctionProgressRequest;
 use ikepu_tp\DesignerHelper\app\Models\Project;
-use ikepu_tp\DesignerHelper\app\Models\Func_category;
-use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Func_progress;
 
 class FunctionProgressController extends BaseController
@@ -14,14 +12,14 @@ class FunctionProgressController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(FunctionProgressRequest $functionProgress, Project $project)
+    public function index(FunctionProgressRequest $functionProgressRequest, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(FunctionProgressRequest $functionProgress, Project $project)
+    public function store(FunctionProgressRequest $functionProgressRequest, Project $project)
     {
         //
     }

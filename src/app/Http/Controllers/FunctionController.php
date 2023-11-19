@@ -12,14 +12,14 @@ class FunctionController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(FunctionRequest $function, Project $project)
+    public function index(FunctionRequest $functionRequest, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(FunctionRequest $function, Project $project)
+    public function store(FunctionRequest $functionRequest, Project $project)
     {
         //
     }

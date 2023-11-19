@@ -12,14 +12,14 @@ class FunctionUserController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(FunctionUserRequest $functionUser, Project $project)
+    public function index(FunctionUserRequest $functionUserRequest, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(FunctionUserRequest $functionUser, Project $project)
+    public function store(FunctionUserRequest $functionUserRequest, Project $project)
     {
         //
     }
