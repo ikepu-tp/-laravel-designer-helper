@@ -12,14 +12,14 @@ class FunctionCategoryController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(FunctionCategoryRequest $functionCategoryRequest)
+    public function index(FunctionCategoryRequest $functionCategory, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(FunctionCategoryRequest $functionCategoryRequest)
+    public function store(FunctionCategoryRequest $functionCategory, Project $project)
     {
         //
     }

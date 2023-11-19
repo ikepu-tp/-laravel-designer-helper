@@ -12,14 +12,14 @@ class ScreenClassController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(ScreenClassRequest $screenClassRequest)
+    public function index(ScreenClassRequest $screenClass, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ScreenClassRequest $screenClassRequest)
+    public function store(ScreenClassRequest $screenClass, Project $project)
     {
         //
     }

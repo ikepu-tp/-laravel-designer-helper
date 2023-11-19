@@ -58,6 +58,14 @@ class Functions extends BaseModel
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Project>|Project
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_class
      */
     public function func_class()

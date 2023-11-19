@@ -14,14 +14,14 @@ class FunctionProgressController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(FunctionProgressRequest $functionProgressRequest)
+    public function index(FunctionProgressRequest $functionProgress, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(FunctionProgressRequest $functionProgressRequest)
+    public function store(FunctionProgressRequest $functionProgress, Project $project)
     {
         //
     }

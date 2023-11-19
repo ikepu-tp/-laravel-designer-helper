@@ -41,4 +41,12 @@ class Table_outline extends BaseModel
     {
         return $this->hasMany(Table_detail::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Project>|Project
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

@@ -42,6 +42,14 @@ class Form extends BaseModel
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Project>|Project
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Form_element>|Form_element[]
      */
     public function form_elements()

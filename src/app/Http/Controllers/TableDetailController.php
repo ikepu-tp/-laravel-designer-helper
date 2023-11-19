@@ -12,14 +12,14 @@ class TableDetailController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(TableDetailRequest $tableDetailRequest)
+    public function index(TableDetailRequest $tableDetail, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TableDetailRequest $tableDetailRequest)
+    public function store(TableDetailRequest $tableDetail, Project $project)
     {
         //
     }

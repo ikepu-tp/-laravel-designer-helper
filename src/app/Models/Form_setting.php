@@ -27,4 +27,12 @@ class Form_setting extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Project>|Project
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

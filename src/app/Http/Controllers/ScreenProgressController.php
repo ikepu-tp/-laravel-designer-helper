@@ -12,14 +12,14 @@ class ScreenProgressController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(ScreenProgressRequest $screenProgressRequest)
+    public function index(ScreenProgressRequest $screenProgress, Project $project)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ScreenProgressRequest $screenProgressRequest)
+    public function store(ScreenProgressRequest $screenProgress, Project $project)
     {
         //
     }

@@ -37,4 +37,12 @@ class Func_progress extends BaseModel
     {
         return $this->hasMany(Functions::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Project>|Project
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

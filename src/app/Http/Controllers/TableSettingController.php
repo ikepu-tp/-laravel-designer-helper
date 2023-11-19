@@ -9,17 +9,20 @@ use ikepu_tp\DesignerHelper\app\Models\Table_setting;
 
 class TableSettingController extends BaseController
 {
+    /** @var Table_setting */
+    public $model;
     /**
      * Display a listing of the resource.
      */
-    public function index(TableSettingRequest $tableSettingRequest)
+    public function index(TableSettingRequest $tableSettingRequest, Project $project)
     {
+        //$this->model=$project->
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TableSettingRequest $tableSettingRequest)
+    public function store(TableSettingRequest $tableSetting, Project $project)
     {
         //
     }

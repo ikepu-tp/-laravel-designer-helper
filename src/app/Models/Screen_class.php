@@ -31,6 +31,14 @@ class Screen_class extends BaseModel
     ];
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Project>|Project
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen>|Screen[]
      */
     public function screens()
