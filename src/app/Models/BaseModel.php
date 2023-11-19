@@ -37,9 +37,18 @@ class BaseModel extends Model
      */
     protected $guarded = ["id", "created_at", "updated_at", "deleted_at"];
 
+    protected static $factoryModel;
+
     function __construct(array $attributes = [])
     {
         $this->connection = config("designer.connection");
         parent::__construct($attributes);
+    }
+
+
+    protected static function newFactory()
+    {
+        if (is_null(static::$factoryModel)) return;
+        return (static::$factoryModel)::new();
     }
 }

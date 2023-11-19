@@ -22,7 +22,11 @@ class ProjectRequest extends FormRequest
     public function rules(): array
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
-        return [];
+        return [
+            "name" => ["required", "string", "max:30"],
+            "sub_name" => ["nullable", "string", "max:30"],
+            "note" => ["nullable", "string", "max:100"],
+        ];
     }
 
     /**
