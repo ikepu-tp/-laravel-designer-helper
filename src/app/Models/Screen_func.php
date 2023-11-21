@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\Screen_funcFactory;
 
 /**
  * @property int $id
@@ -30,6 +31,8 @@ class Screen_func extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    protected static $factoryModel = Screen_funcFactory::class;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Screen
