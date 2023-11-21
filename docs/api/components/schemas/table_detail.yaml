@@ -7,11 +7,6 @@ properties:
     description: テーブル詳細ID
     example: 1
     readOnly: true
-  name:
-    type: string
-    description: テーブル名
-    example: table_names
-    maxLength: 30
   col_name:
     type: string
     description: カラム名
