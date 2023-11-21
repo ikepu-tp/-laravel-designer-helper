@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\ExceptionFactory;
 
 /**
  * @property int $id
@@ -37,6 +38,8 @@ class Exception extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    protected static $factoryModel = ExceptionFactory::class;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Project>|Project
