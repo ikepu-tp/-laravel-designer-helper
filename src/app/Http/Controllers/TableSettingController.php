@@ -20,7 +20,7 @@ class TableSettingController extends BaseController
      */
     public function index(TableSettingRequest $tableSettingRequest, Project $project)
     {
-        $this->model = $project->table_settings();
+        $this->model = $project->tableSettings();
         return Resource::pagination($this->model, TableSettingResource::class);
     }
 

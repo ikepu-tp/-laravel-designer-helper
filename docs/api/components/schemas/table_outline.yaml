@@ -20,7 +20,7 @@ properties:
     example: This is a example note.
     maxLength: 100
     nullable: true
-  timestamp:
+  timestamps:
     type: boolean
     description: タイムスタンプの保存
     example: true

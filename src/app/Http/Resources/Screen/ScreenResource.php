@@ -29,8 +29,8 @@ class ScreenResource extends JsonResource
         return [
             "id" => $this->resource->id,
             "name" => $this->resource->name,
-            "screen_class" => $this->resource->screen_class,
-            "screen_progress" => $this->resource->screen_progress,
+            "screen_class" => $this->resource->screenClass,
+            "screen_progress" => $this->resource->screenProgress,
             "note" => $this->resource->note,
             "url" => $this->resource->url,
             "route_name" => $this->resource->route_name,
