@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\Func_progressFactory;
 
 /**
  * @property int $id
@@ -29,6 +30,8 @@ class Func_progress extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    protected static $factoryModel = Func_progressFactory::class;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Functions>|Functions[]

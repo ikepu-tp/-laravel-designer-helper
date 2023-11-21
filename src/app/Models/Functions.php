@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\FunctionFactory;
 
 /**
  * @property int $id
@@ -48,6 +49,8 @@ class Functions extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    protected static $factoryModel = FunctionFactory::class;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_category

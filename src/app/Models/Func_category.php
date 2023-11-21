@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\Func_categoryFactory;
 
 /**
  * @property int $id
@@ -35,6 +36,8 @@ class Func_category extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    protected static $factoryModel = Func_categoryFactory::class;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_category
