@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\Form_element_attrFactory;
 
 /**
  * @property int $id
@@ -37,6 +38,8 @@ class Form_element_attr extends BaseModel
         "updated_at" => "datetime",
         "deleted_at" => "datetime",
     ];
+
+    protected static $factoryModel = Form_element_attrFactory::class;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Form_element
