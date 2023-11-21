@@ -14,8 +14,8 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
- * @property-read Func_category $parent_category
- * @property-read Func_category[] $children_categories
+ * @property-read Func_category $parentCategory
+ * @property-read Func_category[] $childrenCategories
  * @property-read Functions[] $functions
  */
 class Func_category extends BaseModel
@@ -39,7 +39,7 @@ class Func_category extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_category
      */
-    public function parent_category()
+    public function parentCategory()
     {
         return $this->belongsTo(Func_category::class, "cat_id");
     }
@@ -55,7 +55,7 @@ class Func_category extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Func_category>|Func_category[]
      */
-    public function children_categories()
+    public function childrenCategories()
     {
         return $this->hasMany(Func_category::class, "cat_id");
     }

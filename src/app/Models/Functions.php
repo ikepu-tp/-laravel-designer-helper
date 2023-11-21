@@ -16,11 +16,11 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
- * @property-read Func_category $func_category
- * @property-read Func_class $func_class
- * @property-read Func_user $func_user
- * @property-read Func_progress $func_progress
- * @property-read Screen_func[] $screen_funcs
+ * @property-read Func_category $funcCategory
+ * @property-read Func_class $funcClass
+ * @property-read Func_user $funcUser
+ * @property-read Func_progress $funcProgress
+ * @property-read Screen_func[] $screenFuncs
  */
 class Functions extends BaseModel
 {
@@ -52,7 +52,7 @@ class Functions extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_category
      */
-    public function func_category()
+    public function funcCategory()
     {
         return $this->belongsTo(Func_category::class);
     }
@@ -68,7 +68,7 @@ class Functions extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_class
      */
-    public function func_class()
+    public function funcClass()
     {
         return $this->belongsTo(Func_class::class);
     }
@@ -76,7 +76,7 @@ class Functions extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_user
      */
-    public function func_user()
+    public function funcUser()
     {
         return $this->belongsTo(Func_user::class);
     }
@@ -84,7 +84,7 @@ class Functions extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Func_progress
      */
-    public function func_progress()
+    public function funcProgress()
     {
         return $this->belongsTo(Func_progress::class);
     }
@@ -92,7 +92,7 @@ class Functions extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen_func>|Screen_func[]
      */
-    public function screen_funcs()
+    public function screenFuncs()
     {
         return $this->hasMany(Screen_func::class);
     }

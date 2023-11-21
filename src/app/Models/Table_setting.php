@@ -7,6 +7,7 @@ use ikepu_tp\DesignerHelper\database\factories\Table_settingFactory;
 
 /**
  * @property int $id
+ * @property int $project_id
  * @property string $model_cast
  * @property string $db_type
  * @property string $php_type
@@ -14,7 +15,7 @@ use ikepu_tp\DesignerHelper\database\factories\Table_settingFactory;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
- * @property-read Table_detail[] $table_details
+ * @property-read Table_detail[] $tableDetails
  */
 class Table_setting extends BaseModel
 {
@@ -38,7 +39,7 @@ class Table_setting extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Table_detail>|Table_detail[]
      */
-    public function table_details()
+    public function tableDetails()
     {
         return $this->hasMany(Table_detail::class);
     }

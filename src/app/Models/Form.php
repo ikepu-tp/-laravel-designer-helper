@@ -14,7 +14,7 @@ use Carbon\Carbon;
  * @property Carbon $deleted_at
  *
  * @property-read Screen $screen
- * @property-read Form_element[] $form_elements
+ * @property-read Form_element[] $formElements
  */
 class Form extends BaseModel
 {
@@ -52,7 +52,7 @@ class Form extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Form_element>|Form_element[]
      */
-    public function form_elements()
+    public function formElements()
     {
         return $this->hasMany(Form_element::class);
     }

@@ -3,6 +3,7 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\Table_detailFactory;
 
 /**
  * @property int $id
@@ -21,8 +22,8 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
- * @property-read Table_outline $table_outline
- * @property-read Table_setting $table_setting
+ * @property-read Table_outline $tableOutline
+ * @property-read Table_setting $tableSetting
  */
 class Table_detail extends BaseModel
 {
@@ -48,10 +49,12 @@ class Table_detail extends BaseModel
         "deleted_at" => "datetime",
     ];
 
+    protected static $factoryModel = Table_detailFactory::class;
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Table_outline
      */
-    public function table_outline()
+    public function tableOutline()
     {
         return $this->belongsTo(Table_outline::class);
     }
@@ -59,7 +62,7 @@ class Table_detail extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Table_setting
      */
-    public function table_setting()
+    public function tableSetting()
     {
         return $this->belongsTo(Table_setting::class);
     }

@@ -3,9 +3,11 @@
 namespace ikepu_tp\DesignerHelper\app\Models;
 
 use Carbon\Carbon;
+use ikepu_tp\DesignerHelper\database\factories\Table_outlineFactory;
 
 /**
  * @property int $id
+ * @property int $project_id
  * @property string $name
  * @property string $note
  * @property boolean $timestamps
@@ -14,7 +16,7 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
- * @property-read Table_detail[] $table_details
+ * @property-read Table_detail[] $tableDetails
  */
 class Table_outline extends BaseModel
 {
@@ -34,10 +36,12 @@ class Table_outline extends BaseModel
         "deleted_at" => "datetime",
     ];
 
+    protected static $factoryModel = Table_outlineFactory::class;
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Table_detail>|Table_detail[]
      */
-    public function table_details()
+    public function tableDetails()
     {
         return $this->hasMany(Table_detail::class);
     }

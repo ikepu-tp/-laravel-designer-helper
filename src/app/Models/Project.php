@@ -13,6 +13,20 @@ use ikepu_tp\DesignerHelper\database\factories\ProjectFactory;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property Table_setting[] $tableSettings
+ * @property Table_outline[] $tableOutlines
+ * @property Func_class[] $funcClasses
+ * @property Func_user[] $funcUsers
+ * @property Func_progress[] $funcProgresses
+ * @property Func_category[] $funcCategories
+ * @property Functions[] $functions
+ * @property Exception[] $exceptions
+ * @property Screen_class[] $screenClasses
+ * @property Screen_progress[] $screenProgresses
+ * @property Screen[] $screens
+ * @property Form_setting[] $formSettings
+ * @property Form[] $forms
  */
 class Project extends BaseModel
 {
@@ -36,7 +50,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Table_setting>|Table_setting[]
      */
-    public function table_settings()
+    public function tableSettings()
     {
         return $this->hasMany(Table_setting::class);
     }
@@ -44,7 +58,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Table_outline>|Table_outline[]
      */
-    public function table_outlines()
+    public function tableOutlines()
     {
         return $this->hasMany(Table_outline::class);
     }
@@ -52,7 +66,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Func_class>|Func_class[]
      */
-    public function func_classes()
+    public function funcClasses()
     {
         return $this->hasMany(Func_class::class);
     }
@@ -60,7 +74,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Func_user>|Func_user[]
      */
-    public function func_users()
+    public function funcUsers()
     {
         return $this->hasMany(Func_user::class);
     }
@@ -68,7 +82,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Func_progress>|Func_progress[]
      */
-    public function func_progresses()
+    public function funcProgresses()
     {
         return $this->hasMany(Func_progress::class);
     }
@@ -76,7 +90,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Func_category>|Func_category[]
      */
-    public function func_categories()
+    public function funcCategories()
     {
         return $this->hasMany(Func_category::class);
     }
@@ -100,7 +114,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen_class>|Screen_class[]
      */
-    public function screen_classes()
+    public function screenClasses()
     {
         return $this->hasMany(Screen_class::class);
     }
@@ -108,7 +122,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen_progress>|Screen_progress[]
      */
-    public function screen_progresses()
+    public function screenProgresses()
     {
         return $this->hasMany(Screen_progress::class);
     }
@@ -124,7 +138,7 @@ class Project extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Form_setting>|Form_setting[]
      */
-    public function form_settings()
+    public function formSettings()
     {
         return $this->hasMany(Form_setting::class);
     }

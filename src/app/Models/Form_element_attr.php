@@ -16,7 +16,7 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
- * @property-read Form_element $form_element
+ * @property-read Form_element $formElement
  */
 class Form_element_attr extends BaseModel
 {
@@ -41,7 +41,7 @@ class Form_element_attr extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Form_element
      */
-    public function form_element()
+    public function formElement()
     {
         return $this->belongsTo(Form_element::class);
     }

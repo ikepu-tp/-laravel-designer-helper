@@ -16,10 +16,10 @@ use Carbon\Carbon;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
- * @property-read Screen_class $screen_class
- * @property-read Screen_progress $screen_progress
+ * @property-read Screen_class $screenClass
+ * @property-read Screen_progress $screenProgress
  * @property-read Form[] $forms
- * @property-read Screen_func[] $screen_funcs
+ * @property-read Screen_func[] $screenFuncs
  */
 class Screen extends BaseModel
 {
@@ -52,7 +52,7 @@ class Screen extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Screen_class
      */
-    public function screen_class()
+    public function screenClass()
     {
         return $this->belongsTo(Screen_class::class);
     }
@@ -60,7 +60,7 @@ class Screen extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Screen_progress
      */
-    public function screen_progress()
+    public function screenProgress()
     {
         return $this->belongsTo(Screen_progress::class);
     }
@@ -76,7 +76,7 @@ class Screen extends BaseModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany<Screen_func>|Screen_func[]
      */
-    public function screen_funcs()
+    public function screenFuncs()
     {
         return $this->hasMany(Screen_func::class);
     }
