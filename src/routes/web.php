@@ -29,7 +29,7 @@ Route::scopeBindings()->prefix("designers")->middleware(array_merge(
                 Route::apiResource("details", TableDetailController::class)->parameter("details", "table_detail")->names("table.detail");
             });
             Route::prefix("functions")->group(function () {
-                Route::apiResource("categories", FunctionCategoryController::class)->names("function.category");
+                Route::apiResource("categories", FunctionCategoryController::class)->parameters("cateogory", "function.category")->names("function.category");
                 Route::apiResource("classes", FunctionClassController::class)->names("function.class");
                 Route::apiResource("progresses", FunctionProgressController::class)->names("function.progress");
                 Route::apiResource("users", FunctionUserController::class)->names("function.user");
