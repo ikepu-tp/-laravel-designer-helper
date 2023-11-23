@@ -6,20 +6,21 @@ use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Http\Requests\TableDetailRequest;
 use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Table_detail;
+use ikepu_tp\DesignerHelper\app\Models\Table_outline;
 
 class TableDetailController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(TableDetailRequest $tableDetailRequest, Project $project)
+    public function index(TableDetailRequest $tableDetailRequest, Project $project, Table_outline $table_outline)
     {
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TableDetailRequest $tableDetailRequest, Project $project)
+    public function store(TableDetailRequest $tableDetailRequest, Project $project, Table_outline $table_outline)
     {
         //
     }
@@ -27,7 +28,7 @@ class TableDetailController extends BaseController
     /**
      * Display the specified resource.
      */
-    public function show(TableDetailRequest $tableDetailRequest, Project $project, Table_detail $table_detail)
+    public function show(TableDetailRequest $tableDetailRequest, Project $project, Table_outline $table_outline, Table_detail $table_detail)
     {
         //
     }
@@ -35,7 +36,7 @@ class TableDetailController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(TableDetailRequest $tableDetailRequest, Project $project, Table_detail $table_detail)
+    public function update(TableDetailRequest $tableDetailRequest, Project $project, Table_outline $table_outline, Table_detail $table_detail)
     {
         //
     }
@@ -43,7 +44,7 @@ class TableDetailController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TableDetailRequest $tableDetailRequest, Project $project, Table_detail $table_detail)
+    public function destroy(TableDetailRequest $tableDetailRequest, Project $project, Table_outline $table_outline, Table_detail $table_detail)
     {
         //
     }

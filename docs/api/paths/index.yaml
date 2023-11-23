@@ -10,9 +10,9 @@
   $ref: table/outline/non-id.yaml
 /v1/projects/{project}/tables/outlines/{outline}:
   $ref: table/outline/id.yaml
-/v1/projects/{project}/tables/details:
+/v1/projects/{project}/tables/{outline}/details:
   $ref: table/detail/non-id.yaml
-/v1/projects/{project}/tables/details/{details}:
+/v1/projects/{project}/tables/{outline}/details/{details}:
   $ref: table/detail/id.yaml
 /v1/projects/{project}/functions/categories:
   $ref: func/category/non-id.yaml

@@ -24,6 +24,7 @@ class Table_detailFactory extends Factory
         $table_outline = Table_outline::factory()->create();
         return [
             "table_outline_id" => $table_outline->id,
+            "name" => $this->faker->name,
             "col_name" => $this->faker->name,
             "table_setting_id" => Table_setting::factory()->create(["project_id" => $table_outline->project_id])->id,
             "col_digits" => $this->faker->randomDigit() * 10,

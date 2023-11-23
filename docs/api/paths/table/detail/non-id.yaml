@@ -5,15 +5,16 @@ get:
   description: テーブル詳細の一覧を取得します
   operationId: table_detailIndex
   parameters:
-    - $ref: '#/components/parameters/ACCEPT'
-    - $ref: '#/components/parameters/CONTENT-TYPE'
-    - $ref: '#/components/parameters/NONCE'
-    - $ref: '#/components/parameters/TOKEN'
-    - $ref: '#/components/parameters/PER'
-    - $ref: '#/components/parameters/PAGE'
-    - $ref: '#/components/parameters/ORDER'
-    - $ref: '#/components/parameters/KEYWORD'
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/PER"
+    - $ref: "#/components/parameters/PAGE"
+    - $ref: "#/components/parameters/ORDER"
+    - $ref: "#/components/parameters/KEYWORD"
     - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableOutline"
   security:
     - cookieAuth: []
   responses:
@@ -25,16 +26,16 @@ get:
             type: object
             properties:
               status:
-                $ref: '#/components/schemas/StatusResource'
+                $ref: "#/components/schemas/StatusResource"
               payloads:
                 type: object
                 properties:
                   meta:
-                    $ref: '#/components/schemas/MetaResource'
+                    $ref: "#/components/schemas/MetaResource"
                   items:
                     type: array
                     items:
-                      $ref: '#/components/schemas/TableDetailResource'
+                      $ref: "#/components/schemas/TableDetailResource"
 post:
   tags:
     - table_detail
@@ -42,22 +43,23 @@ post:
   description: テーブル詳細を登録します
   operationId: table_detailStore
   parameters:
-    - $ref: '#/components/parameters/ACCEPT'
-    - $ref: '#/components/parameters/CONTENT-TYPE'
-    - $ref: '#/components/parameters/NONCE'
-    - $ref: '#/components/parameters/TOKEN'
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableOutline"
   security:
     - cookieAuth: []
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/TableDetailResource'
+          $ref: "#/components/schemas/TableDetailResource"
   responses:
     201:
       description: テーブル詳細登録
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/TableDetailResource'
+            $ref: "#/components/schemas/TableDetailResource"

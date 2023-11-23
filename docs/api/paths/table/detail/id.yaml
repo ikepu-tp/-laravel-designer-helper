@@ -10,6 +10,7 @@ get:
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableOutline"
     - $ref: "#/components/parameters/TableDetail"
   security:
     - cookieAuth: []
@@ -32,6 +33,7 @@ put:
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/TableOutline"
     - $ref: "#/components/parameters/TableDetail"
   security:
     - cookieAuth: []
@@ -39,7 +41,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: '#/components/schemas/TableDetailResource'
+          $ref: "#/components/schemas/TableDetailResource"
   responses:
     200:
       description: テーブル詳細更新
