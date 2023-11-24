@@ -22,7 +22,14 @@ class ScreenRequest extends FormRequest
     public function rules(): array
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
-        return [];
+        return [
+            "name" => ["required", "string", "max:50"],
+            "screen_class.id" => ["required", "exists:screen_classes,id"],
+            "screen_progress.id" => ["required", "exists:screen_progresses,id"],
+            "note" => ["string", "nullable"],
+            "url" => ["string", "nullable"],
+            "route_name" => ["string", "nullable"],
+        ];
     }
 
     /**
