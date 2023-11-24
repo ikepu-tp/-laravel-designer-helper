@@ -22,7 +22,10 @@ class FunctionClassRequest extends FormRequest
     public function rules(): array
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
-        return [];
+        return [
+            "name" => ["string", "required", "max:30"],
+            "note" => ["string", "required"],
+        ];
     }
 
     /**
