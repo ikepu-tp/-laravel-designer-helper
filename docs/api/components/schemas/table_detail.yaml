@@ -7,6 +7,10 @@ properties:
     description: テーブル詳細ID
     example: 1
     readOnly: true
+  name:
+    type: string
+    description: 日本語名
+    example: column_name
   col_name:
     type: string
     description: カラム名

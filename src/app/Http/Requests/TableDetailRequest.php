@@ -22,7 +22,18 @@ class TableDetailRequest extends FormRequest
     public function rules(): array
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
-        return [];
+        return [
+            "name" => ["string", "required", "max:30"],
+            "col_name" => ["string", "required", "max:50"],
+            "table_setting.id" => ["numeric", "required"],
+            "col_digits" => ["numeric", "nullable"],
+            "col_nullable" => ["boolean"],
+            "col_default" => ["string", "nullable"],
+            "col_unique" => ["boolean"],
+            "col_primary" => ["boolean"],
+            "col_index" => ["boolean"],
+            "note" => ["string", "nullable"],
+        ];
     }
 
     /**
