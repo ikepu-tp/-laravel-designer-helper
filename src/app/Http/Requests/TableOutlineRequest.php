@@ -22,7 +22,12 @@ class TableOutlineRequest extends FormRequest
     public function rules(): array
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
-        return [];
+        return [
+            "name" => ["string", "required", "max:50"],
+            "note" => ["string", "nullable"],
+            "timestamps" => ["boolean"],
+            "soft_delete" => ["boolean"],
+        ];
     }
 
     /**
