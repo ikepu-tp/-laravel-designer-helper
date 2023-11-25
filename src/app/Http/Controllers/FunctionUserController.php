@@ -3,17 +3,26 @@
 namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
+use ikepu_tp\DesignerHelper\app\Exceptions\Error\DeleteFailedException;
+use ikepu_tp\DesignerHelper\app\Exceptions\Error\SaveFailedException;
 use ikepu_tp\DesignerHelper\app\Http\Requests\FunctionUserRequest;
+use ikepu_tp\DesignerHelper\app\Http\Resources\Func\FunctionUserResource;
+use ikepu_tp\DesignerHelper\app\Http\Resources\Resource;
 use ikepu_tp\DesignerHelper\app\Models\Project;
 use ikepu_tp\DesignerHelper\app\Models\Func_user;
 
 class FunctionUserController extends BaseController
 {
+    /** @var Func_user|Func_user[] */
+    public $model;
+
     /**
      * Display a listing of the resource.
      */
     public function index(FunctionUserRequest $functionUserRequest, Project $project)
     {
+        $this->model = $project->funcUsers();
+        return Resource::pagination($this->model, FunctionUserResource::class);
     }
 
     /**
@@ -21,7 +30,15 @@ class FunctionUserController extends BaseController
      */
     public function store(FunctionUserRequest $functionUserRequest, Project $project)
     {
-        //
+        $this->model = new Func_user();
+        $this->model->fill(
+            [
+                "project_id" => $project->id,
+            ]
+        );
+        $this->model->fill($functionUserRequest->validated());
+        if (!$this->model->save()) throw new SaveFailedException();
+        return Resource::create(new FunctionUserResource($this->model));
     }
 
     /**
@@ -29,7 +46,8 @@ class FunctionUserController extends BaseController
      */
     public function show(FunctionUserRequest $functionUserRequest, Project $project, Func_user $func_user)
     {
-        //
+        $this->model = $func_user;
+        return Resource::success(new FunctionUserResource($this->model));
     }
 
     /**
@@ -37,7 +55,10 @@ class FunctionUserController extends BaseController
      */
     public function update(FunctionUserRequest $functionUserRequest, Project $project, Func_user $func_user)
     {
-        //
+        $this->model = $func_user;
+        $this->model->fill($functionUserRequest->validated());
+        if (!$this->model->save()) throw new SaveFailedException();
+        return Resource::success(new FunctionUserResource($this->model));
     }
 
     /**
@@ -45,6 +66,7 @@ class FunctionUserController extends BaseController
      */
     public function destroy(FunctionUserRequest $functionUserRequest, Project $project, Func_user $func_user)
     {
-        //
+        if (!$func_user->delete()) throw new DeleteFailedException();
+        return Resource::NoContent();
     }
 }
