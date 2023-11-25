@@ -46,6 +46,7 @@ class DesignerHelperServiceProvider extends ServiceProvider
         ], 'DesignerHelper-config');
 
 
+        $this->publishTests();
         //$this->publishMigration();
         //$this->publishView();
         //$this->publishAsset();
@@ -68,6 +69,13 @@ class DesignerHelperServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/resources/views' => resource_path('views/vendor/DesignerHelper'),
         ], 'DesignerHelper-views');
+    }
+
+    private function publishTests(): void
+    {
+        $this->publishes([
+            __DIR__ . '/tests' => base_path("tests"),
+        ], 'DesignerHelper-tests');
     }
 
     private function publishAsset(): void
