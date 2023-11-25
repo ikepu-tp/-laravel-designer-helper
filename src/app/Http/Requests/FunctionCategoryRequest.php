@@ -22,7 +22,12 @@ class FunctionCategoryRequest extends FormRequest
     public function rules(): array
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
-        return [];
+        return [
+            "deps" => ["numeric", "nullable"],
+            "name" => ["required", "string", "max:30"],
+            "cat_id" => ["nullable", "string", "exists:func_categories,id"],
+            "note" => ["nullable", "string",],
+        ];
     }
 
     /**
