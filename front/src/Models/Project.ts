@@ -11,6 +11,6 @@ export type ProjectResource = {
 };
 export type ProjectStoreResource = {
 	name: string;
-	sub_name?: string | null;
-	note?: string | null;
+	sub_name?: string;
+	note?: string;
 };

@@ -44,8 +44,8 @@ export function IndexController<R = any>(props: IndexControllerProps<R>): JSX.El
 	);
 }
 export type FormControllerProps<R = any, S = any> = ChildControllerProps<R, S> & {
-	storeInit: S;
-	id: string;
+	storeInit?: S;
+	id?: string;
 	success?: (payloads: R) => void;
 	ButtonDisabled?: boolean;
 	convertResource?: (resource: R) => S;
@@ -60,7 +60,7 @@ export function FormController<R = any, S = any>(props: FormControllerProps<R, S
 	}, [props.id]);
 
 	async function getResource(): Promise<void> {
-		let resource: any = { ...{}, ...props.storeInit };
+		let resource: any = { ...{}, ...(props.storeInit || {}) };
 		if (props.id === 'new') {
 			if (props.convertResource) resource = props.convertResource(resource);
 			setResource({ ...{}, ...resource });

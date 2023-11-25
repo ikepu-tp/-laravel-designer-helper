@@ -41,7 +41,7 @@ export function createUrl(url: string, param: ParamType = {}): string {
 	if (splited_url[splited_url.length - 1] === '') splited_url.splice(splited_url.length - 1, 1);
 	url = splited_url.join('/');
 	if (Object.keys(param).length) url = `${url}?${createQuery(param)}`;
-	return url;
+	return `/${url}`;
 }
 
 export function createQuery(param: ParamType): string {
