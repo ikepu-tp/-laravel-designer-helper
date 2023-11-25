@@ -22,7 +22,10 @@ class FunctionProgressRequest extends FormRequest
     public function rules(): array
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
-        return [];
+        return [
+            "name" => ["required", "string", "max:30"],
+            "note" => ["nullable", "string",],
+        ];
     }
 
     /**
