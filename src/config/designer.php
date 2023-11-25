@@ -23,7 +23,7 @@ return [
      * ----------------------------------------------------------------
      */
     "middleware" => [
-        DesignerMiddleware::class
+        DesignerMiddleware::class,
     ],
 
     /**
@@ -42,5 +42,6 @@ return [
      */
     "web_middleware" => [
         "web",
+        "auth:web",
     ],
 ];
