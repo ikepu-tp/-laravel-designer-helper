@@ -1,4 +1,13 @@
 services:
+    app:
+        image: node:lts
+        container_name: front
+        tty: true
+        volumes:
+          - ./:/data
+        ports:
+          - 5174:5174
+        working_dir: /data
     redoc:
         image: redocly/redoc
         environment:

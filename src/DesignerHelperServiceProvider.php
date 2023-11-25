@@ -29,7 +29,7 @@ class DesignerHelperServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         Route::model("project", Project::class);
         Route::model("table_setting", Table_setting::class);
-        //$this->loadViewsFrom(__DIR__ . "/resources/views", "DesignerHelper");
+        $this->loadViewsFrom(__DIR__ . "/resources/views", "DesignerHelper");
         //Paginator::useBootstrap();
         //Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "DesignerHelper");
     }
