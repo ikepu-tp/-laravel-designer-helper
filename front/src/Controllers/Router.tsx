@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ProjectIndexController, ProjectStoreController } from './ProjectController';
+import { ProjectIndexController, ProjectShowController, ProjectStoreController } from './ProjectController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -8,6 +8,7 @@ export default function Router(): React.ReactElement {
 			<Routes>
 				<Route index element={<ProjectIndexController />} />
 				<Route path="project/:project">
+					<Route index element={<ProjectShowController />} />
 					<Route path="edit" element={<ProjectStoreController />} />
 				</Route>
 			</Routes>

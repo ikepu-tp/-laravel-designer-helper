@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import { IndexController, StoreController } from './Controller';
+import { IndexController, ShowController, StoreController } from './Controller';
 import Project from '~/Models/Project';
-import { ProjectIndexView, ProjectStoreView } from '~/Views/ProjectView';
+import { ProjectIndexView, ProjectShowView, ProjectStoreView } from '~/Views/ProjectView';
 import { useParams } from 'react-router-dom';
 import route from '~/route';
 
@@ -25,6 +25,18 @@ export function ProjectStoreController(): ReactElement {
 			model={new Project()}
 			id={project}
 			child={ProjectStoreView}
+		/>
+	);
+}
+export function ProjectShowController(): ReactElement {
+	const { project } = useParams<ProjectRoute>();
+	return (
+		<ShowController
+			title="プロジェクト詳細"
+			breadCrumb={[{ link: route('project.index'), text: 'プロジェクト一覧' }]}
+			model={new Project()}
+			id={project}
+			child={ProjectShowView}
 		/>
 	);
 }

@@ -1,10 +1,11 @@
 import { PropsWithChildren, ReactElement } from 'react';
-import { IndexView, IndexViewProps, StoreView, StoreViewProps } from './View';
-import { Table } from 'react-bootstrap';
+import { IndexView, IndexViewProps, ShowViewProps, StoreView, StoreViewProps } from './View';
+import { ListGroup, Table } from 'react-bootstrap';
 import { ProjectResource, ProjectStoreResource } from '~/Models/Project';
-import route from '~/route';
+import route, { routes } from '~/route';
 import { Control } from '@ikepu-tp/react-bootstrap-extender/Form';
 import Anchor from '~/components/Anchor';
+import TextWrapper from '~/components/TextWrapper';
 
 export type ProjectIndexViewProps = {};
 export function ProjectIndexView(props: IndexViewProps<ProjectResource> & ProjectIndexViewProps): ReactElement {
@@ -83,5 +84,69 @@ export function ProjectStoreView(props: StoreViewProps<ProjectStoreResource> & P
 				onChange={props.changeResourceStr}
 			/>
 		</StoreView>
+	);
+}
+
+export type ProjectShowViewProps = {};
+export function ProjectShowView(props: ShowViewProps<ProjectResource> & ProjectShowViewProps): ReactElement {
+	return (
+		<>
+			<h2>{props.Resource.name}</h2>
+			<h3>{props.Resource.sub_name}</h3>
+			<TextWrapper>{props.Resource.note}</TextWrapper>
+			<ListGroup className="mt-3">
+				<MenuLinkItem
+					route_name="table-setting.index"
+					route_param={{ project: props.Resource.id }}
+					children="テーブル設定"
+				/>
+				<MenuLinkItem
+					route_name="table-outline.index"
+					route_param={{ project: props.Resource.id }}
+					children="テーブル概要"
+				/>
+				<MenuLinkItem
+					route_name="function-category.index"
+					route_param={{ project: props.Resource.id }}
+					children="機能カテゴリー"
+				/>
+				<MenuLinkItem
+					route_name="function-class.index"
+					route_param={{ project: props.Resource.id }}
+					children="機能区分"
+				/>
+				<MenuLinkItem
+					route_name="function-progress.index"
+					route_param={{ project: props.Resource.id }}
+					children="機能進捗"
+				/>
+				<MenuLinkItem
+					route_name="function-user.index"
+					route_param={{ project: props.Resource.id }}
+					children="機能ユーザー範囲"
+				/>
+				<MenuLinkItem route_name="function.index" route_param={{ project: props.Resource.id }} children="機能" />
+				<MenuLinkItem route_name="screen.index" route_param={{ project: props.Resource.id }} children="画面" />
+				<MenuLinkItem
+					route_name="screen-class.index"
+					route_param={{ project: props.Resource.id }}
+					children="画面区分"
+				/>
+				<MenuLinkItem
+					route_name="screen-progress.index"
+					route_param={{ project: props.Resource.id }}
+					children="画面進捗"
+				/>
+			</ListGroup>
+		</>
+	);
+}
+function MenuLinkItem(
+	props: { route_name: keyof typeof routes; route_param: { [s: string]: string | number } } & PropsWithChildren
+): ReactElement {
+	return (
+		<Anchor href={route(props.route_name, props.route_param)} className="list-group-item list-group-item-action">
+			{props.children}
+		</Anchor>
 	);
 }
