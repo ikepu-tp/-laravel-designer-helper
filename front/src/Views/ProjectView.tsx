@@ -96,44 +96,44 @@ export function ProjectShowView(props: ShowViewProps<ProjectResource> & ProjectS
 			<TextWrapper>{props.Resource.note}</TextWrapper>
 			<ListGroup className="mt-3">
 				<MenuLinkItem
-					route_name="table-setting.index"
+					route_name="table_setting.index"
 					route_param={{ project: props.Resource.id }}
 					children="テーブル設定"
 				/>
 				<MenuLinkItem
-					route_name="table-outline.index"
+					route_name="table_outline.index"
 					route_param={{ project: props.Resource.id }}
 					children="テーブル概要"
 				/>
 				<MenuLinkItem
-					route_name="function-category.index"
+					route_name="function_category.index"
 					route_param={{ project: props.Resource.id }}
 					children="機能カテゴリー"
 				/>
 				<MenuLinkItem
-					route_name="function-class.index"
+					route_name="function_class.index"
 					route_param={{ project: props.Resource.id }}
 					children="機能区分"
 				/>
 				<MenuLinkItem
-					route_name="function-progress.index"
+					route_name="function_progress.index"
 					route_param={{ project: props.Resource.id }}
 					children="機能進捗"
 				/>
 				<MenuLinkItem
-					route_name="function-user.index"
+					route_name="function_user.index"
 					route_param={{ project: props.Resource.id }}
 					children="機能ユーザー範囲"
 				/>
 				<MenuLinkItem route_name="function.index" route_param={{ project: props.Resource.id }} children="機能" />
 				<MenuLinkItem route_name="screen.index" route_param={{ project: props.Resource.id }} children="画面" />
 				<MenuLinkItem
-					route_name="screen-class.index"
+					route_name="screen_class.index"
 					route_param={{ project: props.Resource.id }}
 					children="画面区分"
 				/>
 				<MenuLinkItem
-					route_name="screen-progress.index"
+					route_name="screen_progress.index"
 					route_param={{ project: props.Resource.id }}
 					children="画面進捗"
 				/>

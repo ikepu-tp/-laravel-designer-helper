@@ -394,10 +394,10 @@
     react-bootstrap "^2.8.0"
     react-dom "^18.2.0"
 
-"@ikepu-tp/react-mvc@^0.9.5":
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/@ikepu-tp/react-mvc/-/react-mvc-0.9.5.tgz#764a26a4bc58d371775ffb42b45d77e737c034b6"
-  integrity sha512-vB2RbPe0hH4ILoDGHYM1CG+kr4xwqZoNTCQvZH5m/auBFJ/X5xQCEc6ma3Kk7HUnPj+R6HbzWw35HHrjB6KqyQ==
+"@ikepu-tp/react-mvc@^0.9.6":
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/@ikepu-tp/react-mvc/-/react-mvc-0.9.6.tgz#7677f3c042c3c94543655cc4aa89b0bfd3ef1c1b"
+  integrity sha512-V7V5Deel9gzJVrES0L10G5MVWElZJOmJ2r1eZiTY4E5zxm9u6nCD5A5b1pj8zq+yPDrki6F8RpD96l6U1cOnog==
   dependencies:
     "@types/react" "^18.2.22"
     "@types/react-dom" "^18.2.7"

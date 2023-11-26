@@ -1,6 +1,11 @@
 import React, { ReactElement } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ProjectIndexController, ProjectShowController, ProjectStoreController } from './ProjectController';
+import {
+	TableSettingIndexController,
+	TableSettingShowController,
+	TableSettingStoreController,
+} from './tables/TableSettingController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -10,19 +15,19 @@ export default function Router(): React.ReactElement {
 				<Route path="project/:project">
 					<Route index element={<ProjectShowController />} />
 					<Route path="edit" element={<ProjectStoreController />} />
-					<Route path="table-setting">
-						<Route index element />
+					<Route path="table_setting">
+						<Route index element={<TableSettingIndexController />} />
 						<Route path=":table_setting">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<TableSettingShowController />} />
+							<Route path="edit" element={<TableSettingStoreController />} />
 						</Route>
 					</Route>
-					<Route path="table-outline">
+					<Route path="table_outline">
 						<Route index element />
 						<Route path=":table_outline">
 							<Route index element />
 							<Route path="edit" element />
-							<Route path="table-detail">
+							<Route path="table_detail">
 								<Route index element />
 								<Route path=":table_detail">
 									<Route index element />
@@ -32,30 +37,30 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 
-					<Route path="function-category">
+					<Route path="function_category">
 						<Route index element />
-						<Route path=":function-category">
+						<Route path=":function_category">
 							<Route index element />
 							<Route path="edit" element />
 						</Route>
 					</Route>
-					<Route path="function-class">
+					<Route path="function_class">
 						<Route index element />
-						<Route path=":function-class">
+						<Route path=":function_class">
 							<Route index element />
 							<Route path="edit" element />
 						</Route>
 					</Route>
-					<Route path="function-progress">
+					<Route path="function_progress">
 						<Route index element />
-						<Route path=":function-progress">
+						<Route path=":function_progress">
 							<Route index element />
 							<Route path="edit" element />
 						</Route>
 					</Route>
-					<Route path="function-user">
+					<Route path="function_user">
 						<Route index element />
-						<Route path=":function-user">
+						<Route path=":function_user">
 							<Route index element />
 							<Route path="edit" element />
 						</Route>
@@ -74,16 +79,16 @@ export default function Router(): React.ReactElement {
 							<Route path="edit" element />
 						</Route>
 					</Route>
-					<Route path="screen-class">
+					<Route path="screen_class">
 						<Route index element />
-						<Route path=":screen-class">
+						<Route path=":screen_class">
 							<Route index element />
 							<Route path="edit" element />
 						</Route>
 					</Route>
-					<Route path="screen-progress">
+					<Route path="screen_progress">
 						<Route index element />
-						<Route path=":screen-progress">
+						<Route path=":screen_progress">
 							<Route index element />
 							<Route path="edit" element />
 						</Route>

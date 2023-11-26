@@ -1,7 +1,7 @@
 import { ParamIndexType, ResponseIndexType, ResponseType } from './interfaces';
 import { Model as defaultModel } from '@ikepu-tp/react-mvc';
-import Send, { SuccessOrFailedResponseResource } from '@ikepu-tp/react-mvc/Send';
-import Url, { ParamType } from '@ikepu-tp/react-mvc/Url';
+import { SuccessOrFailedResponseResource } from '@ikepu-tp/react-mvc/Send';
+import { ParamType } from '@ikepu-tp/react-mvc/Url';
 
 export class Model<
 	T = any,
@@ -37,8 +37,7 @@ export class Model<
 		}
 	) {
 		super(default_params, default_headers);
-		this.url = new Url(this.base_url);
-		this.send = new Send(this.url);
+		if (this.url) this.url.setBaseUrl(this.base_url);
 	}
 
 	public convertResponse<P = ResponseType<T>>(response: SuccessOrFailedResponseResource | null): P {

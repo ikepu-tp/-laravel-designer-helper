@@ -43,9 +43,8 @@ export type ResponseType<T = object> = {
 	error?: ResponseErrorType;
 };
 
-
 export type ParamType = {
-	[s: string]: string | number;
+	[s: string]: string | number | undefined;
 };
 export type ParamIndexType = ParamType & {
 	per?: number;

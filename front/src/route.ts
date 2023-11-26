@@ -4,63 +4,58 @@ export const routes: { [s: string]: string } = {
 	'project.index': '/',
 	'project.store': '/project/{project}/edit',
 	'project.show': '/project/{project}',
-	'table-setting.index': '/project/{project}/table-setting',
-	'table-setting.store': '/project/{project}/table-setting/{table_setting}/edit',
-	'table-setting.show': '/project/{project}/table-setting/{table_setting}',
-	'table-outline.index': '/project/{project}/table-outline',
-	'table-outline.store': '/project/{project}/table-outline/{table_outline}/edit',
-	'table-outline.show': '/project/{project}/table-outline/{table_outline}',
-	'table-detail.index': '/project/{project}/table-outline/{table-outline}/table-detail',
-	'table-detail.store': '/project/{project}/table-outline/{table-outline}/table-detail/{table_detail}/edit',
-	'table-detail.show': '/project/{project}/table-outline/{table-outline}/table-detail/{table_detail}',
-	'function-category.index': '/project/{project}/function-category',
-	'function-category.store': '/project/{project}/function-category/{function_category}/edit',
-	'function-category.show': '/project/{project}/function-category/{function_category}',
-	'function-class.index': '/project/{project}/function-class',
-	'function-class.store': '/project/{project}/function-class/{function_class}/edit',
-	'function-class.show': '/project/{project}/function-class/{function_class}',
-	'function-progress.index': '/project/{project}/function-progress',
-	'function-progress.store': '/project/{project}/function-progress/{function_progress}/edit',
-	'function-progress.show': '/project/{project}/function-progress/{function_progress}',
-	'function-user.index': '/project/{project}/function-user',
-	'function-user.store': '/project/{project}/function-user/{function_user}/edit',
-	'function-user.show': '/project/{project}/function-user/{function_user}',
+	'table_setting.index': '/project/{project}/table_setting',
+	'table_setting.store': '/project/{project}/table_setting/{table_setting}/edit',
+	'table_setting.show': '/project/{project}/table_setting/{table_setting}',
+	'table_outline.index': '/project/{project}/table_outline',
+	'table_outline.store': '/project/{project}/table_outline/{table_outline}/edit',
+	'table_outline.show': '/project/{project}/table_outline/{table_outline}',
+	'table_detail.index': '/project/{project}/table_outline/{table_outline}/table_detail',
+	'table_detail.store': '/project/{project}/table_outline/{table_outline}/table_detail/{table_detail}/edit',
+	'table_detail.show': '/project/{project}/table_outline/{table_outline}/table_detail/{table_detail}',
+	'function_category.index': '/project/{project}/function_category',
+	'function_category.store': '/project/{project}/function_category/{function_category}/edit',
+	'function_category.show': '/project/{project}/function_category/{function_category}',
+	'function_class.index': '/project/{project}/function_class',
+	'function_class.store': '/project/{project}/function_class/{function_class}/edit',
+	'function_class.show': '/project/{project}/function_class/{function_class}',
+	'function_progress.index': '/project/{project}/function_progress',
+	'function_progress.store': '/project/{project}/function_progress/{function_progress}/edit',
+	'function_progress.show': '/project/{project}/function_progress/{function_progress}',
+	'function_user.index': '/project/{project}/function_user',
+	'function_user.store': '/project/{project}/function_user/{function_user}/edit',
+	'function_user.show': '/project/{project}/function_user/{function_user}',
 	'function.index': '/project/{project}/function',
 	'function.store': '/project/{project}/function/{function}/edit',
 	'function.show': '/project/{project}/function/{function}',
 	'screen.index': '/project/{project}/screen',
 	'screen.store': '/project/{project}/screen/{screen}/edit',
 	'screen.show': '/project/{project}/screen/{screen}',
-	'screen-class.index': '/project/{project}/screen-class',
-	'screen-class.store': '/project/{project}/screen-class/{screen_class}/edit',
-	'screen-class.show': '/project/{project}/screen-class/{screen_class}',
-	'screen-progress.index': '/project/{project}/screen-progress',
-	'screen-progress.store': '/project/{project}/screen-progress/{screen_progress}/edit',
-	'screen-progress.show': '/project/{project}/screen-progress/{screen_progress}',
+	'screen_class.index': '/project/{project}/screen_class',
+	'screen_class.store': '/project/{project}/screen_class/{screen_class}/edit',
+	'screen_class.show': '/project/{project}/screen_class/{screen_class}',
+	'screen_progress.index': '/project/{project}/screen_progress',
+	'screen_progress.store': '/project/{project}/screen_progress/{screen_progress}/edit',
+	'screen_progress.show': '/project/{project}/screen_progress/{screen_progress}',
 };
-export default function route(
-	route_name: keyof typeof routes,
-	parameters: {
-		[s: string]: string | number;
-	} = {}
-): string {
+export default function route(route_name: keyof typeof routes, parameters: ParamType = {}): string {
 	if (!routes[route_name]) throw new Error('存在しないパスです');
 	return createUrlWithConvertParameters(routes[route_name], parameters);
 }
 
-export function createUrlWithConvertParameters(url: string, param: { [s: string]: string | number }): string {
+export function createUrlWithConvertParameters(url: string, param: ParamType): string {
 	param = { ...{}, ...param };
 	//パラメータ変換
-	const url_params: string[] | null = url.match(/{[a-zA-Z]+}/gi);
+	const url_params: string[] | null = url.match(/{[a-zA-Z_]+}/gi);
 	if (url_params !== null)
 		url_params.forEach((paramName: string) => {
 			const paramKey: string = paramName.replace(/{|}/gi, '');
-			if (!param[paramKey]) throw new Error('Invalid parameter');
+			if (!param[paramKey]) throw new Error('Invalid parameter: ' + paramKey);
 			url = url.replace(paramName, `${param[paramKey]}`);
 			delete param[paramKey];
 		});
 	//オプションパラメータ変換
-	const url_params_opt: string[] | null = url.match(/{[a-zA-Z]+[?]}/gi);
+	const url_params_opt: string[] | null = url.match(/{[a-zA-Z_]+[?]}/gi);
 	if (url_params_opt !== null)
 		url_params_opt.forEach((paramName: string) => {
 			const paramKey: string = paramName.replace(/[{|}|?]/gi, '');
