@@ -60,6 +60,10 @@ export function TableDetailStoreController(): ReactElement {
 					link: route('table_outline.index', { project }),
 					text: 'テーブル概要一覧',
 				},
+				{
+					link: route('table_outline.show', { project, table_outline }),
+					text: 'テーブル概要詳細',
+				},
 			]}
 			model={new TableDetail({ project, table_outline })}
 			id={table_detail}
@@ -86,6 +90,10 @@ export function TableDetailShowController(): ReactElement {
 				{
 					link: route('table_outline.index', { project }),
 					text: 'テーブル概要一覧',
+				},
+				{
+					link: route('table_outline.show', { project, table_outline }),
+					text: 'テーブル概要詳細',
 				},
 			]}
 			model={new TableDetail({ project, table_outline })}
