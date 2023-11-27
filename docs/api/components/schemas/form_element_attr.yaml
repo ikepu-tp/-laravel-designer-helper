@@ -3,12 +3,10 @@ required:
   - name
 properties:
   id:
-    type: int
-    description: フォームID
+    type: integer
+    description: フォーム要素属性ID
     example: 1
     readOnly: true
-  form_element:
-    $ref: "#/components/schemas/FormElementResource"
   placeholder:
     type: string
     description: プレースホルダー
@@ -31,4 +29,3 @@ properties:
     type: string
     description: 最大値
     example: project name
-  

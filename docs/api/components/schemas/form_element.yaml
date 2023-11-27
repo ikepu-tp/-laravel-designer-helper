@@ -27,3 +27,5 @@ properties:
     description: フォームに関する備考
     example: This is an example.
     nullable: true
+  attributes:
+    $ref: form_element_attr.yaml
