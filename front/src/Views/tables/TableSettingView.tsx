@@ -42,7 +42,7 @@ function TableSettingListItem(props: { projectId: string; item: TableSettingReso
 		</tr>
 	);
 }
-function TableSettingListParent(props: PropsWithChildren): ReactElement {
+export function TableSettingListParent(props: PropsWithChildren): ReactElement {
 	return (
 		<>
 			<Table striped hover>

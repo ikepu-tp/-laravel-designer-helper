@@ -11,6 +11,7 @@ import {
 	TableOutlineShowController,
 	TableOutlineStoreController,
 } from './tables/TableOutlineController';
+import { TableDetailShowController, TableDetailStoreController } from './tables/TableDetailController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -34,8 +35,8 @@ export default function Router(): React.ReactElement {
 							<Route path="edit" element={<TableOutlineStoreController />} />
 							<Route path="table_detail">
 								<Route path=":table_detail">
-									<Route index element />
-									<Route path="edit" element />
+									<Route index element={<TableDetailShowController />} />
+									<Route path="edit" element={<TableDetailStoreController />} />
 								</Route>
 							</Route>
 						</Route>

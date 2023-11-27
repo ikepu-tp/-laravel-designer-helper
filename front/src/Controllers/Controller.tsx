@@ -40,6 +40,7 @@ export function IndexController<R = any>(props: IndexControllerProps<R>): JSX.El
 	return (
 		<Controller title={props.title} breadCrumb={props.breadCrumb}>
 			<ListController {...props} />
+			{props.children}
 		</Controller>
 	);
 }
@@ -76,7 +77,17 @@ export function FormController<R = any, S = any>(props: FormControllerProps<R, S
 	}
 	function changeResource(key: string, value: any): void {
 		if (!Resource) return;
-		Resource[key as keyof S] = value as never;
+		let resource = Resource as any;
+		if (key.indexOf('.') === -1) {
+			resource[key] = value as never;
+		} else {
+			const keys: string[] = key.split('.');
+			let i = 0;
+			for (; i < keys.length - 1; ++i) {
+				resource = resource[keys[i]];
+			}
+			resource[keys[i]] = value as never;
+		}
 		setResource({ ...{}, ...Resource });
 	}
 	function changeResourceStr(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>): void {
@@ -120,6 +131,7 @@ export function StoreController<R = any, S = any>(props: StoreControllerProps<R,
 	return (
 		<Controller title={props.title} breadCrumb={props.breadCrumb}>
 			<FormController {...props} />
+			{props.children}
 		</Controller>
 	);
 }
@@ -158,6 +170,7 @@ export function ShowController<R = any>(props: ShowControllerProps<R>): JSX.Elem
 	return (
 		<Controller title={props.title} breadCrumb={props.breadCrumb}>
 			<DetailController {...props} />
+			{props.children}
 		</Controller>
 	);
 }

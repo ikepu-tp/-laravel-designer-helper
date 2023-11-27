@@ -112,7 +112,7 @@ export function TableOutlineStoreView(
 
 export type TableOutlineShowViewProps = {};
 export function TableOutlineShowView(
-	props: ShowViewProps<TableOutlineResource> & TableOutlineShowViewProps
+	props: ShowViewProps<TableOutlineResource> & PropsWithChildren & TableOutlineShowViewProps
 ): ReactElement {
 	return (
 		<>
@@ -138,6 +138,8 @@ export function TableOutlineShowView(
 					</tr>
 				</tbody>
 			</Table>
+			<h3 className="mt-2">テーブル詳細</h3>
+			{props.children}
 		</>
 	);
 }
