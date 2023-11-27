@@ -7,8 +7,8 @@ export default class Project extends Model<ProjectResource, ProjectStoreResource
 export type ProjectResource = {
 	id: number;
 	name: string;
-	sub_name?: string | null;
-	note?: string | null;
+	sub_name: string | null;
+	note: string | null;
 };
 export type ProjectStoreResource = {
 	name: string;

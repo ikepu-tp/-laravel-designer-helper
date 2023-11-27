@@ -19,6 +19,10 @@ export function TableSettingIndexController(): ReactElement {
 					link: route('project.index'),
 					text: 'プロジェクト一覧',
 				},
+				{
+					link: route('project.show', { project }),
+					text: 'プロジェクト詳細',
+				},
 			]}
 			model={new TableSetting({ project })}
 			child={TableSettingIndexView}
@@ -35,6 +39,10 @@ export function TableSettingStoreController(): ReactElement {
 				{
 					link: route('project.index'),
 					text: 'プロジェクト一覧',
+				},
+				{
+					link: route('project.show', { project }),
+					text: 'プロジェクト詳細',
 				},
 				{
 					link: route('table_setting.index', { project }),
@@ -57,6 +65,10 @@ export function TableSettingShowController(): ReactElement {
 				{
 					link: route('project.index'),
 					text: 'プロジェクト一覧',
+				},
+				{
+					link: route('project.show', { project }),
+					text: 'プロジェクト詳細',
 				},
 				{
 					link: route('table_setting.index', { project }),
