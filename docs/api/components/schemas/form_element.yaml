@@ -3,12 +3,10 @@ required:
   - name
 properties:
   id:
-    type: int
+    type: integer
     description: フォームID
     example: 1
     readOnly: true
-  form:
-    $ref: "#/components/schemas/FormResource"
   label:
     type: string
     description: 項目名

@@ -168,6 +168,14 @@ FormSetting:
     type: number
     example: 1
   required: true
+FormElement:
+  name: form_element
+  in: path
+  description: フォーム要素ID
+  schema:
+    type: number
+    example: 1
+  required: true
 Form:
   name: form
   in: path

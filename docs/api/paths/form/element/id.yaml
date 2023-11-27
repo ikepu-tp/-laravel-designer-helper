@@ -1,0 +1,67 @@
+get:
+  tags:
+    - form_element
+  summary: フォーム要素詳細
+  description: フォーム要素の詳細を取得します
+  operationId: form_elementShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/FormElement"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: フォーム要素の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FormElementResource"
+put:
+  tags:
+    - form_element
+  summary: フォーム要素更新
+  description: フォーム要素を更新します
+  operationId: form_elementUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/FormElement"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/FormElementResource"
+  responses:
+    200:
+      description: フォーム要素更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FormElementResource"
+delete:
+  tags:
+    - form_element
+  summary: フォーム要素削除
+  description: フォーム要素を削除します
+  operationId: form_elementDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/FormElement"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: フォーム要素削除
