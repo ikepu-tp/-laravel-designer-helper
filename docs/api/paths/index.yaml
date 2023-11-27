@@ -46,3 +46,7 @@
   $ref: screen/non-id.yaml
 /v1/projects/{project}/screens/{screen}:
   $ref: screen/id.yaml
+/v1/projects/{project}/exceptions:
+  $ref: exception/non-id.yaml
+/v1/projects/{project}/exceptions/{exception}:
+  $ref: exception/id.yaml

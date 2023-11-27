@@ -152,3 +152,11 @@ ScreenProgress:
     type: number
     example: 1
   required: true
+Exception:
+  name: exception
+  in: path
+  description: 画面進捗ID
+  schema:
+    type: number
+    example: 1
+  required: true

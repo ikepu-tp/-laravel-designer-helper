@@ -1,0 +1,67 @@
+get:
+  tags:
+    - exception
+  summary: 例外詳細
+  description: 例外の詳細を取得します
+  operationId: exceptionShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Exception"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: 例外の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ExceptionResource"
+put:
+  tags:
+    - exception
+  summary: 例外更新
+  description: 例外を更新します
+  operationId: exceptionUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Exception"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ExceptionResource"
+  responses:
+    200:
+      description: 例外更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ExceptionResource"
+delete:
+  tags:
+    - exception
+  summary: 例外削除
+  description: 例外を削除します
+  operationId: exceptionDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Exception"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: 例外削除

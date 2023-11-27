@@ -113,6 +113,12 @@ tags:
       ## 画面リソース
       <SchemaDefinition schemaRef="#/components/schemas/ScreenResource" />
 
+  - name: exception
+    x-displayName: 例外
+    description: |
+      ## 例外リソース
+      <SchemaDefinition schemaRef="#/components/schemas/ExceptionResource" />
+
 x-tagGroups:
   - name: プロジェクト
     tags:
@@ -137,6 +143,10 @@ x-tagGroups:
       - screen
       - screen_class
       - screen_progress
+
+  - name: 例外
+    tags:
+      - exception
 
 paths:
   $ref: "./paths/index.yaml"
