@@ -155,7 +155,15 @@ ScreenProgress:
 Exception:
   name: exception
   in: path
-  description: 画面進捗ID
+  description: 例外ID
+  schema:
+    type: number
+    example: 1
+  required: true
+FormSetting:
+  name: form_setting
+  in: path
+  description: フォーム設定ID
   schema:
     type: number
     example: 1

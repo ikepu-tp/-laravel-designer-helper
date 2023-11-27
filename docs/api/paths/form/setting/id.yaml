@@ -1,0 +1,67 @@
+get:
+  tags:
+    - form_setting
+  summary: フォーム設定詳細
+  description: フォーム設定の詳細を取得します
+  operationId: form_settingShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/FormSetting"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: フォーム設定の詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FormSettingResource"
+put:
+  tags:
+    - form_setting
+  summary: フォーム設定更新
+  description: フォーム設定を更新します
+  operationId: form_settingUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/FormSetting"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/FormSettingResource"
+  responses:
+    200:
+      description: フォーム設定更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FormSettingResource"
+delete:
+  tags:
+    - form_setting
+  summary: フォーム設定削除
+  description: フォーム設定を削除します
+  operationId: form_settingDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/FormSetting"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: フォーム設定削除

@@ -50,3 +50,7 @@
   $ref: exception/non-id.yaml
 /v1/projects/{project}/exceptions/{exception}:
   $ref: exception/id.yaml
+/v1/projects/{project}/forms/settings:
+  $ref: form/setting/non-id.yaml
+/v1/projects/{project}/forms/settings/{settings}:
+  $ref: form/setting/id.yaml

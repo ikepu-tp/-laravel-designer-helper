@@ -119,6 +119,12 @@ tags:
       ## 例外リソース
       <SchemaDefinition schemaRef="#/components/schemas/ExceptionResource" />
 
+  - name: form_setting
+    x-displayName: フォーム設定
+    description: |
+      ## フォーム設定リソース
+      <SchemaDefinition schemaRef="#/components/schemas/FormSettingResource" />
+
 x-tagGroups:
   - name: プロジェクト
     tags:
@@ -147,6 +153,10 @@ x-tagGroups:
   - name: 例外
     tags:
       - exception
+
+  - name: フォーム
+    tags:
+      - form_setting
 
 paths:
   $ref: "./paths/index.yaml"
