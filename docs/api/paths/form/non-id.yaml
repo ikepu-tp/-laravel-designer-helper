@@ -1,0 +1,63 @@
+get:
+  tags:
+    - form
+  summary: フォーム一覧
+  description: フォームの一覧を取得します
+  operationId: formIndex
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/PER"
+    - $ref: "#/components/parameters/PAGE"
+    - $ref: "#/components/parameters/ORDER"
+    - $ref: "#/components/parameters/KEYWORD"
+    - $ref: "#/components/parameters/Project"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: フォームの一覧
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: "#/components/schemas/StatusResource"
+              payloads:
+                type: object
+                properties:
+                  meta:
+                    $ref: "#/components/schemas/MetaResource"
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/FormResource"
+post:
+  tags:
+    - form
+  summary: フォーム登録
+  description: フォームを登録します
+  operationId: formStore
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/FormResource"
+  responses:
+    201:
+      description: フォーム登録
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FormResource"

@@ -1,0 +1,67 @@
+get:
+  tags:
+    - form
+  summary: フォーム詳細
+  description: フォームの詳細を取得します
+  operationId: formShow
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Form"
+  security:
+    - cookieAuth: []
+  responses:
+    200:
+      description: フォームの詳細
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FormResource"
+put:
+  tags:
+    - form
+  summary: フォーム更新
+  description: フォームを更新します
+  operationId: formUpdate
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Form"
+  security:
+    - cookieAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/FormResource"
+  responses:
+    200:
+      description: フォーム更新
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/FormResource"
+delete:
+  tags:
+    - form
+  summary: フォーム削除
+  description: フォームを削除します
+  operationId: formDelete
+  parameters:
+    - $ref: "#/components/parameters/ACCEPT"
+    - $ref: "#/components/parameters/CONTENT-TYPE"
+    - $ref: "#/components/parameters/NONCE"
+    - $ref: "#/components/parameters/TOKEN"
+    - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Form"
+  security:
+    - cookieAuth: []
+  responses:
+    204:
+      description: フォーム削除

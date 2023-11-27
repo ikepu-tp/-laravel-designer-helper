@@ -125,6 +125,12 @@ tags:
       ## フォーム設定リソース
       <SchemaDefinition schemaRef="#/components/schemas/FormSettingResource" />
 
+  - name: form
+    x-displayName: フォーム
+    description: |
+      ## フォームリソース
+      <SchemaDefinition schemaRef="#/components/schemas/FormResource" />
+
 x-tagGroups:
   - name: プロジェクト
     tags:
@@ -157,6 +163,7 @@ x-tagGroups:
   - name: フォーム
     tags:
       - form_setting
+      - form
 
 paths:
   $ref: "./paths/index.yaml"

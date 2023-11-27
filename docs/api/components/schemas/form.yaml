@@ -3,7 +3,7 @@ required:
   - name
 properties:
   id:
-    type: int
+    type: integer
     description: フォームID
     example: 1
     readOnly: true
@@ -12,8 +12,10 @@ properties:
     description: フォーム名
     example: project name
     maxLength: 50
-  screen:
-    $ref: "#/components/schemas/ScreenResource"
+  screens:
+    type: array
+    items:
+      $ref: "#/components/schemas/ScreenResource"
   note:
     type: string
     description: フォームに関する備考

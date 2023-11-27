@@ -168,3 +168,11 @@ FormSetting:
     type: number
     example: 1
   required: true
+Form:
+  name: form
+  in: path
+  description: フォームID
+  schema:
+    type: number
+    example: 1
+  required: true

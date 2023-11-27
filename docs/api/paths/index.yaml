@@ -54,3 +54,7 @@
   $ref: form/setting/non-id.yaml
 /v1/projects/{project}/forms/settings/{form_setting}:
   $ref: form/setting/id.yaml
+/v1/projects/{project}/forms:
+  $ref: form/non-id.yaml
+/v1/projects/{project}/forms/{form}:
+  $ref: form/id.yaml
