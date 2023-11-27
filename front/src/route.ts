@@ -10,7 +10,6 @@ export const routes: { [s: string]: string } = {
 	'table_outline.index': '/project/{project}/table_outline',
 	'table_outline.store': '/project/{project}/table_outline/{table_outline}/edit',
 	'table_outline.show': '/project/{project}/table_outline/{table_outline}',
-	'table_detail.index': '/project/{project}/table_outline/{table_outline}/table_detail',
 	'table_detail.store': '/project/{project}/table_outline/{table_outline}/table_detail/{table_detail}/edit',
 	'table_detail.show': '/project/{project}/table_outline/{table_outline}/table_detail/{table_detail}',
 	'function_category.index': '/project/{project}/function_category',

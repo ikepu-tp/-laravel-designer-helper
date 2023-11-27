@@ -6,6 +6,11 @@ import {
 	TableSettingShowController,
 	TableSettingStoreController,
 } from './tables/TableSettingController';
+import {
+	TableOutlineIndexController,
+	TableOutlineShowController,
+	TableOutlineStoreController,
+} from './tables/TableOutlineController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -23,12 +28,11 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 					<Route path="table_outline">
-						<Route index element />
+						<Route index element={<TableOutlineIndexController />} />
 						<Route path=":table_outline">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<TableOutlineShowController />} />
+							<Route path="edit" element={<TableOutlineStoreController />} />
 							<Route path="table_detail">
-								<Route index element />
 								<Route path=":table_detail">
 									<Route index element />
 									<Route path="edit" element />
