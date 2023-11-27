@@ -114,5 +114,30 @@ export type TableOutlineShowViewProps = {};
 export function TableOutlineShowView(
 	props: ShowViewProps<TableOutlineResource> & TableOutlineShowViewProps
 ): ReactElement {
-	return <></>;
+	return (
+		<>
+			<Table striped hover responsive>
+				<tbody>
+					<tr>
+						<th>テーブル名</th>
+						<td>{props.Resource.name}</td>
+					</tr>
+					<tr>
+						<th>備考</th>
+						<td>
+							<TextWrapper>{props.Resource.note}</TextWrapper>
+						</td>
+					</tr>
+					<tr>
+						<th>タイムスタンプの保存</th>
+						<td>{props.Resource.timestamps ? 'あり' : 'なし'}</td>
+					</tr>
+					<tr>
+						<th>論理削除の有無</th>
+						<td>{props.Resource.soft_delete ? 'あり' : 'なし'}</td>
+					</tr>
+				</tbody>
+			</Table>
+		</>
+	);
 }
