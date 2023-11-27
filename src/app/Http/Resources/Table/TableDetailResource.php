@@ -31,7 +31,7 @@ class TableDetailResource extends JsonResource
             "name" => $this->resource->name,
 
             "table_setting" => (new TableSettingResource($this->resource->tableSetting))->createArray(),
-            "col_name" => $this->resource->column_name,
+            "col_name" => $this->resource->col_name,
             "col_digits" => $this->resource->col_digits,
             "col_nullable" => $this->resource->col_nullable,
             "col_default" => $this->resource->col_default,
