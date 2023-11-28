@@ -27,6 +27,11 @@ import {
 	FunctionProgressShowController,
 	FunctionProgressStoreController,
 } from './function/FunctionProgressController';
+import {
+	FunctionUserIndexController,
+	FunctionUserShowController,
+	FunctionUserStoreController,
+} from './function/FunctionUserController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -79,10 +84,10 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 					<Route path="function_user">
-						<Route index element />
+						<Route index element={<FunctionUserIndexController />} />
 						<Route path=":function_user">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<FunctionUserShowController />} />
+							<Route path="edit" element={<FunctionUserStoreController />} />
 						</Route>
 					</Route>
 					<Route path="function">
