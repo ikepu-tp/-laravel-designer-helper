@@ -49,7 +49,7 @@ function FunctionClassListItem(props: { projectId: string; item: FunctionClassRe
 		</tr>
 	);
 }
-function FunctionClassListParent(props: PropsWithChildren): ReactElement {
+export function FunctionClassListParent(props: PropsWithChildren): ReactElement {
 	return (
 		<>
 			<Table striped hover>

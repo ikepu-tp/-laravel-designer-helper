@@ -16,22 +16,27 @@ import {
 	FunctionCategoryIndexController,
 	FunctionCategoryShowController,
 	FunctionCategoryStoreController,
-} from './function/FunctionCategoryController';
+} from './functions/FunctionCategoryController';
 import {
 	FunctionClassIndexController,
 	FunctionClassShowController,
 	FunctionClassStoreController,
-} from './function/FunctionClassController';
+} from './functions/FunctionClassController';
 import {
 	FunctionProgressIndexController,
 	FunctionProgressShowController,
 	FunctionProgressStoreController,
-} from './function/FunctionProgressController';
+} from './functions/FunctionProgressController';
 import {
 	FunctionUserIndexController,
 	FunctionUserShowController,
 	FunctionUserStoreController,
-} from './function/FunctionUserController';
+} from './functions/FunctionUserController';
+import {
+	FunctionIndexController,
+	FunctionShowController,
+	FunctionStoreController,
+} from './functions/FunctionController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -91,10 +96,10 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 					<Route path="function">
-						<Route index element />
-						<Route path=":function">
-							<Route index element />
-							<Route path="edit" element />
+						<Route index element={<FunctionIndexController />} />
+						<Route path=":_function">
+							<Route index element={<FunctionShowController />} />
+							<Route path="edit" element={<FunctionStoreController />} />
 						</Route>
 					</Route>
 					<Route path="screen">

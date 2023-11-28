@@ -52,7 +52,7 @@ function FunctionCategoryListItem(props: { projectId: string; item: FunctionCate
 		</tr>
 	);
 }
-function FunctionCategoryListParent(props: PropsWithChildren): ReactElement {
+export function FunctionCategoryListParent(props: PropsWithChildren): ReactElement {
 	return (
 		<>
 			<Table striped hover>

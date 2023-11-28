@@ -49,7 +49,7 @@ function FunctionUserListItem(props: { projectId: string; item: FunctionUserReso
 		</tr>
 	);
 }
-function FunctionUserListParent(props: PropsWithChildren): ReactElement {
+export function FunctionUserListParent(props: PropsWithChildren): ReactElement {
 	return (
 		<>
 			<Table striped hover>

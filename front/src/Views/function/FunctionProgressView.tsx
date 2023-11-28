@@ -49,7 +49,7 @@ function FunctionProgressListItem(props: { projectId: string; item: FunctionProg
 		</tr>
 	);
 }
-function FunctionProgressListParent(props: PropsWithChildren): ReactElement {
+export function FunctionProgressListParent(props: PropsWithChildren): ReactElement {
 	return (
 		<>
 			<Table striped hover>
