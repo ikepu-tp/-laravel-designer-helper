@@ -6,11 +6,12 @@ import Anchor from '~/components/Anchor';
 import ListView from '~/components/ListView';
 import { FormProps } from '~/components/form';
 
-export type IndexViewProps<R = any> = ListViewProps<R> & {
-	createLink?: string;
-	menus?: ReactNode;
-	sub_menus?: ReactNode;
-};
+export type IndexViewProps<R = any> = PropsWithChildren &
+	ListViewProps<R> & {
+		createLink?: string;
+		menus?: ReactNode;
+		sub_menus?: ReactNode;
+	};
 export function IndexView<R = any>(props: IndexViewProps<R>): JSX.Element {
 	return (
 		<>
@@ -44,7 +45,7 @@ export function StoreView(props: StoreViewProps): JSX.Element {
 		</FormWrapper>
 	);
 }
-export type ShowViewProps<R = any> = {
+export type ShowViewProps<R = any> = PropsWithChildren & {
 	Resource: R;
 };
 export type ShowParentViewProps = PropsWithChildren & {};

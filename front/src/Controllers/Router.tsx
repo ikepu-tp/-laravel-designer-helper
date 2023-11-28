@@ -12,6 +12,11 @@ import {
 	TableOutlineStoreController,
 } from './tables/TableOutlineController';
 import { TableDetailShowController, TableDetailStoreController } from './tables/TableDetailController';
+import {
+	FunctionCategoryIndexController,
+	FunctionCategoryShowController,
+	FunctionCategoryStoreController,
+} from './function/FunctionCategoryController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -43,10 +48,10 @@ export default function Router(): React.ReactElement {
 					</Route>
 
 					<Route path="function_category">
-						<Route index element />
+						<Route index element={<FunctionCategoryIndexController />} />
 						<Route path=":function_category">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<FunctionCategoryShowController />} />
+							<Route path="edit" element={<FunctionCategoryStoreController />} />
 						</Route>
 					</Route>
 					<Route path="function_class">
