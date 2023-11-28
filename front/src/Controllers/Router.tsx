@@ -22,6 +22,11 @@ import {
 	FunctionClassShowController,
 	FunctionClassStoreController,
 } from './function/FunctionClassController';
+import {
+	FunctionProgressIndexController,
+	FunctionProgressShowController,
+	FunctionProgressStoreController,
+} from './function/FunctionProgressController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -67,10 +72,10 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 					<Route path="function_progress">
-						<Route index element />
+						<Route index element={<FunctionProgressIndexController />} />
 						<Route path=":function_progress">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<FunctionProgressShowController />} />
+							<Route path="edit" element={<FunctionProgressStoreController />} />
 						</Route>
 					</Route>
 					<Route path="function_user">
