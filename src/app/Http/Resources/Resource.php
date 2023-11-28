@@ -147,10 +147,13 @@ class Resource extends JsonResource
      * @param string $resource
      * @return JsonResponse
      */
-    static public function pagination(mixed $item, string $resource): JsonResponse
+    static public function pagination(mixed $item, string $resource, string $idKeyName = "id"): JsonResponse
     {
         $per = FacadesRequest::query("per", 100);
+        $except = FacadesRequest::query("except", "");
+        $excepts = explode(",", $except);
         $static = new static;
+        $item = $item->whereNotIn($idKeyName, $excepts);
         $cnt = $item->count();
         $item = $item->orderBy('created_at', FacadesRequest::query("order", "asc"));
 
