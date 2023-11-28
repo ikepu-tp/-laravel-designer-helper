@@ -17,6 +17,11 @@ import {
 	FunctionCategoryShowController,
 	FunctionCategoryStoreController,
 } from './function/FunctionCategoryController';
+import {
+	FunctionClassIndexController,
+	FunctionClassShowController,
+	FunctionClassStoreController,
+} from './function/FunctionClassController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -55,10 +60,10 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 					<Route path="function_class">
-						<Route index element />
+						<Route index element={<FunctionClassIndexController />} />
 						<Route path=":function_class">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<FunctionClassShowController />} />
+							<Route path="edit" element={<FunctionClassStoreController />} />
 						</Route>
 					</Route>
 					<Route path="function_progress">

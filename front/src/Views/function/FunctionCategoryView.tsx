@@ -145,7 +145,7 @@ export function FunctionCategoryShowView(
 			<Table striped hover responsive>
 				<tbody>
 					<tr>
-						<th>テーブル名</th>
+						<th>カテゴリー名</th>
 						<td>{props.Resource.name}</td>
 					</tr>
 					<tr>
