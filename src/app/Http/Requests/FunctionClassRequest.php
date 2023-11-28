@@ -24,7 +24,7 @@ class FunctionClassRequest extends FormRequest
         if (!$this->routeIs(["*.store", "*.update"])) return [];
         return [
             "name" => ["string", "required", "max:30"],
-            "note" => ["string", "required"],
+            "note" => ["string", "nullable"],
         ];
     }
 

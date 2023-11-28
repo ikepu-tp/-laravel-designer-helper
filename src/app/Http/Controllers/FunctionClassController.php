@@ -21,7 +21,7 @@ class FunctionClassController extends BaseController
      */
     public function index(FunctionClassRequest $functionClassRequest, Project $project)
     {
-        $this->model = Func_class::factory()->create();
+        $this->model = $project->funcClasses();
         return Resource::pagination($this->model, FunctionClassResource::class);
     }
 
