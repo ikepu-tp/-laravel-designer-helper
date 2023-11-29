@@ -37,6 +37,17 @@ import {
 	FunctionShowController,
 	FunctionStoreController,
 } from './functions/FunctionController';
+import { ScreenIndexController, ScreenShowController, ScreenStoreController } from './screens/ScreenController';
+import {
+	ScreenClassIndexController,
+	ScreenClassShowController,
+	ScreenClassStoreController,
+} from './screens/ScreenClassController';
+import {
+	ScreenProgressIndexController,
+	ScreenProgressShowController,
+	ScreenProgressStoreController,
+} from './screens/ScreenProgressController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -103,24 +114,24 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 					<Route path="screen">
-						<Route index element />
+						<Route index element={<ScreenIndexController />} />
 						<Route path=":screen">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<ScreenShowController />} />
+							<Route path="edit" element={<ScreenStoreController />} />
 						</Route>
 					</Route>
 					<Route path="screen_class">
-						<Route index element />
+						<Route index element={<ScreenClassIndexController />} />
 						<Route path=":screen_class">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<ScreenClassShowController />} />
+							<Route path="edit" element={<ScreenClassStoreController />} />
 						</Route>
 					</Route>
 					<Route path="screen_progress">
-						<Route index element />
+						<Route index element={<ScreenProgressIndexController />} />
 						<Route path=":screen_progress">
-							<Route index element />
-							<Route path="edit" element />
+							<Route index element={<ScreenProgressShowController />} />
+							<Route path="edit" element={<ScreenProgressStoreController />} />
 						</Route>
 					</Route>
 				</Route>
