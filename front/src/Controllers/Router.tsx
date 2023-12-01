@@ -113,6 +113,7 @@ export default function Router(): React.ReactElement {
 							<Route path="edit" element={<FunctionStoreController />} />
 						</Route>
 					</Route>
+
 					<Route path="screen">
 						<Route index element={<ScreenIndexController />} />
 						<Route path=":screen">
@@ -134,6 +135,9 @@ export default function Router(): React.ReactElement {
 							<Route path="edit" element={<ScreenProgressStoreController />} />
 						</Route>
 					</Route>
+
+					<Route path="exception"></Route>
+					<Route path="form"></Route>
 				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>
