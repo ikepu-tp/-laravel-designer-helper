@@ -5,75 +5,68 @@ namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Exceptions\Error\DeleteFailedException;
 use ikepu_tp\DesignerHelper\app\Exceptions\Error\SaveFailedException;
-use ikepu_tp\DesignerHelper\app\Http\Requests\ScreenRequest;
+use ikepu_tp\DesignerHelper\app\Http\Requests\ExceptionRequest;
+use ikepu_tp\DesignerHelper\app\Http\Resources\Exception\ExceptionResource;
 use ikepu_tp\DesignerHelper\app\Http\Resources\Resource;
-use ikepu_tp\DesignerHelper\app\Http\Resources\Screen\ScreenResource;
+use ikepu_tp\DesignerHelper\app\Models\Exception;
 use ikepu_tp\DesignerHelper\app\Models\Project;
-use ikepu_tp\DesignerHelper\app\Models\Screen;
 
 class ExceptionController extends BaseController
 {
-    /** @var Screen|Screen[] */
+    /** @var Exception|Exception[] */
     public $model;
+
     /**
      * Display a listing of the resource.
      */
-    public function index(ScreenRequest $screenRequest, Project $project)
+    public function index(ExceptionRequest $exceptionRequest, Project $project)
     {
         $this->model = $project->screens();
-        return Resource::pagination($this->model, ScreenResource::class);
+        return Resource::pagination($this->model, ExceptionResource::class);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ScreenRequest $screenRequest, Project $project)
+    public function store(ExceptionRequest $exceptionRequest, Project $project)
     {
-        $this->model = new Screen();
+        $this->model = new Exception();
         $this->model->fill(
             [
                 "project_id" => $project->id,
-                "screen_class_id" => $screenRequest->validated("screen_class.id"),
-                "screen_progress_id" => $screenRequest->validated("screen_progress.id"),
             ]
         );
-        $this->model->fill($screenRequest->safe()->except(["screen_class", "screen_progress"]));
+        $this->model->fill($exceptionRequest->validated());
         if (!$this->model->save()) throw new SaveFailedException();
-        return Resource::create(new ScreenResource($this->model));
+        return Resource::create(new ExceptionResource($this->model));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(ScreenRequest $screenRequest, Project $project, Screen $screen)
+    public function show(ExceptionRequest $exceptionRequest, Project $project, Exception $exception)
     {
-        $this->model = $screen;
-        return Resource::success(new ScreenResource($this->model));
+        $this->model = $exception;
+        return Resource::success(new ExceptionResource($this->model));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(ScreenRequest $screenRequest, Project $project, Screen $screen)
+    public function update(ExceptionRequest $exceptionRequest, Project $project, Exception $exception)
     {
-        $this->model = $screen;
-        $this->model->fill(
-            [
-                "screen_class_id" => $screenRequest->validated("screen_class.id"),
-                "screen_progress_id" => $screenRequest->validated("screen_progress.id"),
-            ]
-        );
-        $this->model->fill($screenRequest->safe()->except(["screen_class", "screen_progress"]));
+        $this->model = $exception;
+        $this->model->fill($exceptionRequest->validated());
         if (!$this->model->save()) throw new SaveFailedException();
-        return Resource::success(new ScreenResource($this->model));
+        return Resource::success(new ExceptionResource($this->model));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ScreenRequest $screenRequest, Project $project, Screen $screen)
+    public function destroy(ExceptionRequest $exceptionRequest, Project $project, Exception $exception)
     {
-        if (!$screen->delete()) throw new DeleteFailedException();
+        if (!$exception->delete()) throw new DeleteFailedException();
         return Resource::NoContent();
     }
 }
