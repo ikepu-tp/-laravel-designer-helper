@@ -1,5 +1,6 @@
 <?php
 
+use ikepu_tp\DesignerHelper\app\Http\Controllers\ExceptionController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionCategoryController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionClassController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionController;
@@ -47,6 +48,9 @@ Route::scopeBindings()->prefix("designers")->middleware(config("designer.middlew
                 Route::apiResource("classes", ScreenClassController::class)->parameter("classes", "screen_class")->names("screen.class");
                 Route::apiResource("progresses", ScreenProgressController::class)->parameter("progresses", "screen_progress")->names("screen.progress");
                 Route::apiResource("", ScreenController::class)->parameter("", "screen")->names("screen");
+            });
+            Route::prefix("exceptions")->group(function () {
+                Route::apiResource("", ExceptionController::class)->parameter("", "exception")->names("exception");
             });
         });
         Route::apiResource("projects", ProjectController::class)->names("project");
