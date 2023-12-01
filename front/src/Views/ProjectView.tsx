@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import { IndexView, IndexViewProps, ShowViewProps, StoreView, StoreViewProps } from './View';
-import { ListGroup, Table } from 'react-bootstrap';
+import { Card, ListGroup, Table } from 'react-bootstrap';
 import { ProjectResource, ProjectStoreResource } from '~/Models/Project';
 import route, { routes } from '~/route';
 import { Control } from '@ikepu-tp/react-bootstrap-extender/Form';
@@ -94,50 +94,69 @@ export function ProjectShowView(props: ShowViewProps<ProjectResource> & ProjectS
 			<h2>{props.Resource.name}</h2>
 			<h3>{props.Resource.sub_name}</h3>
 			<TextWrapper>{props.Resource.note}</TextWrapper>
-			<ListGroup className="mt-3">
-				<MenuLinkItem
-					route_name="table_setting.index"
-					route_param={{ project: props.Resource.id }}
-					children="テーブル設定"
-				/>
-				<MenuLinkItem
-					route_name="table_outline.index"
-					route_param={{ project: props.Resource.id }}
-					children="テーブル概要"
-				/>
-				<MenuLinkItem
-					route_name="function_category.index"
-					route_param={{ project: props.Resource.id }}
-					children="機能カテゴリー"
-				/>
-				<MenuLinkItem
-					route_name="function_class.index"
-					route_param={{ project: props.Resource.id }}
-					children="機能区分"
-				/>
-				<MenuLinkItem
-					route_name="function_progress.index"
-					route_param={{ project: props.Resource.id }}
-					children="機能進捗"
-				/>
-				<MenuLinkItem
-					route_name="function_user.index"
-					route_param={{ project: props.Resource.id }}
-					children="機能ユーザー範囲"
-				/>
-				<MenuLinkItem route_name="function.index" route_param={{ project: props.Resource.id }} children="機能" />
-				<MenuLinkItem route_name="screen.index" route_param={{ project: props.Resource.id }} children="画面" />
-				<MenuLinkItem
-					route_name="screen_class.index"
-					route_param={{ project: props.Resource.id }}
-					children="画面区分"
-				/>
-				<MenuLinkItem
-					route_name="screen_progress.index"
-					route_param={{ project: props.Resource.id }}
-					children="画面進捗"
-				/>
-			</ListGroup>
+			<Card className="mb-3">
+				<Card.Header>テーブル関連</Card.Header>
+				<Card.Body>
+					<ListGroup>
+						<MenuLinkItem
+							route_name="table_setting.index"
+							route_param={{ project: props.Resource.id }}
+							children="テーブル設定"
+						/>
+						<MenuLinkItem
+							route_name="table_outline.index"
+							route_param={{ project: props.Resource.id }}
+							children="テーブル概要"
+						/>
+					</ListGroup>
+				</Card.Body>
+			</Card>
+			<Card className="mb-3">
+				<Card.Header>機能関連</Card.Header>
+				<Card.Body>
+					<ListGroup>
+						<MenuLinkItem
+							route_name="function_category.index"
+							route_param={{ project: props.Resource.id }}
+							children="機能カテゴリー"
+						/>
+						<MenuLinkItem
+							route_name="function_class.index"
+							route_param={{ project: props.Resource.id }}
+							children="機能区分"
+						/>
+						<MenuLinkItem
+							route_name="function_progress.index"
+							route_param={{ project: props.Resource.id }}
+							children="機能進捗"
+						/>
+						<MenuLinkItem
+							route_name="function_user.index"
+							route_param={{ project: props.Resource.id }}
+							children="機能ユーザー範囲"
+						/>
+						<MenuLinkItem route_name="function.index" route_param={{ project: props.Resource.id }} children="機能" />
+					</ListGroup>
+				</Card.Body>
+			</Card>
+			<Card className="mb-3">
+				<Card.Header>画面関連</Card.Header>
+				<Card.Body>
+					<ListGroup className="mt-3">
+						<MenuLinkItem route_name="screen.index" route_param={{ project: props.Resource.id }} children="画面" />
+						<MenuLinkItem
+							route_name="screen_class.index"
+							route_param={{ project: props.Resource.id }}
+							children="画面区分"
+						/>
+						<MenuLinkItem
+							route_name="screen_progress.index"
+							route_param={{ project: props.Resource.id }}
+							children="画面進捗"
+						/>
+					</ListGroup>
+				</Card.Body>
+			</Card>
 		</>
 	);
 }
