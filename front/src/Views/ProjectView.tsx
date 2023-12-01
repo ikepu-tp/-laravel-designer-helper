@@ -157,6 +157,12 @@ export function ProjectShowView(props: ShowViewProps<ProjectResource> & ProjectS
 					</ListGroup>
 				</Card.Body>
 			</Card>
+			<Card className="mb-3">
+				<Card.Header>フォーム関連</Card.Header>
+				<Card.Body>
+					<ListGroup className="mt-3"></ListGroup>
+				</Card.Body>
+			</Card>
 		</>
 	);
 }
