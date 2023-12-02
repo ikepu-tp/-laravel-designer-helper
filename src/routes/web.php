@@ -1,6 +1,9 @@
 <?php
 
 use ikepu_tp\DesignerHelper\app\Http\Controllers\ExceptionController;
+use ikepu_tp\DesignerHelper\app\Http\Controllers\FormController;
+use ikepu_tp\DesignerHelper\app\Http\Controllers\FormElementController;
+use ikepu_tp\DesignerHelper\app\Http\Controllers\FormSettingController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionCategoryController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionClassController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionController;
@@ -51,6 +54,11 @@ Route::scopeBindings()->prefix("designers")->middleware(config("designer.middlew
             });
             Route::prefix("exceptions")->group(function () {
                 Route::apiResource("", ExceptionController::class)->parameter("", "exception")->names("exception");
+            });
+            Route::prefix("forms")->group(function () {
+                Route::apiResource("settings", FormSettingController::class)->parameter("settings", "form_setting")->names("form.setting");
+                Route::apiResource("forms.elements", FormElementController::class)->parameter("elements", "form_element")->names("form.element");
+                Route::apiResource("", FormController::class)->parameter("", "form")->names("form");
             });
         });
         Route::apiResource("projects", ProjectController::class)->names("project");

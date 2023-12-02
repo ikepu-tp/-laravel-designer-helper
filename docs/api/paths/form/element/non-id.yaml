@@ -14,6 +14,7 @@ get:
     - $ref: "#/components/parameters/ORDER"
     - $ref: "#/components/parameters/KEYWORD"
     - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Form"
   security:
     - cookieAuth: []
   responses:
@@ -47,6 +48,7 @@ post:
     - $ref: "#/components/parameters/NONCE"
     - $ref: "#/components/parameters/TOKEN"
     - $ref: "#/components/parameters/Project"
+    - $ref: "#/components/parameters/Form"
   security:
     - cookieAuth: []
   requestBody:
