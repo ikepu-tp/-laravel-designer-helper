@@ -26,6 +26,7 @@ jobs:
 
       - name: build
         run: |
+          rm -rf ./src/resources/front
           cd front
           yarn install
           yarn build
