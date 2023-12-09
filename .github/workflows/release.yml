@@ -24,14 +24,6 @@ jobs:
         with:
           node-version: 18
 
-      - name: clean
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          rm -rf ./src/resources/front
-          git add ./src/resources/front
-          git commit -m "clean"
-
       - name: build
         run: |
           cd front
@@ -41,14 +33,18 @@ jobs:
 
       - name: push branch
         run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add ./src/resources/front
           git commit -m "build"
           git push -u origin
 
       - name: set version
+        if: ${{ always() }}
         run: node -p -e 'const version=require("./version.json");`RELEASED_VERSION=v${version["version"]}`' >> $GITHUB_ENV
 
       - name: create release
+        if: ${{ always() }}
         run: |
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
