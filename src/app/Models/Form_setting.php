@@ -12,6 +12,9 @@ use ikepu_tp\DesignerHelper\database\factories\Form_settingFactory;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ *
+ * @property-read Project $project
+ * @property-read Form_element[] $formElements
  */
 class Form_setting extends BaseModel
 {
@@ -37,5 +40,13 @@ class Form_setting extends BaseModel
     public function project()
     {
         return $this->belongsTo(Project::class);
+    }
+
+    /**
+     * @return  \Illuminate\Database\Eloquent\Relations\HasMany<Form_element>|Form_element[]
+     */
+    public function formElements()
+    {
+        return $this->hasMany(Form_element::class);
     }
 }

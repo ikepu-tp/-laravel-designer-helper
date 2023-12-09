@@ -18,10 +18,7 @@ properties:
     example: project name
     maxLength: 50
   type:
-    type: string
-    description: 項目タイプ
-    example: project name
-    maxLength: 50
+    $ref: "#/components/schemas/FormSettingResource"
   note:
     type: string
     description: フォームに関する備考

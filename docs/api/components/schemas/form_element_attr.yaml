@@ -24,8 +24,8 @@ properties:
   attr_min:
     type: string
     description: 最小値
-    example: project name
+    example: 0
   attr_max:
     type: string
     description: 最大値
-    example: project name
+    example: 50

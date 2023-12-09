@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('form_id')->constrained('forms');
             $table->string('label', 50);
             $table->string('name', 50);
-            $table->string('type', 50);
+            $table->foreignId('form_setting_id')->constrained('form_settings');
             $table->text('note')->nullable();
             $table->timestamps();
             $table->softDeletes();

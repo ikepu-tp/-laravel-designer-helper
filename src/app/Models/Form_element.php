@@ -18,6 +18,7 @@ use ikepu_tp\DesignerHelper\database\factories\Form_elementFactory;
  *
  * @property-read Form $form
  * @property-read Form_element_attr[] $formElementAttrs
+ * @property-read Form_setting $formSetting
  */
 class Form_element extends BaseModel
 {
@@ -54,5 +55,13 @@ class Form_element extends BaseModel
     public function formElementAttrs()
     {
         return $this->hasMany(Form_element_attr::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Form_setting>|Form_setting
+     */
+    public function formSetting()
+    {
+        return $this->belongsTo(Form_setting::class);
     }
 }
