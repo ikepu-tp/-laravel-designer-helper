@@ -24,12 +24,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: install
-        run: yarn install
-
       - name: build
         run: |
           cd front
+          yarn install
           yarn build
 
       - name: push branch
