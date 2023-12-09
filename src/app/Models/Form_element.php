@@ -54,7 +54,7 @@ class Form_element extends BaseModel
      */
     public function formElementAttr()
     {
-        return $this->belongsTo(Form_element_attr::class);
+        return $this->hasOne(Form_element_attr::class);
     }
 
     /**

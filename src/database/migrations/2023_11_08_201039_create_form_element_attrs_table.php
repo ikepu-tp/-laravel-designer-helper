@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::connection(config("designer.connection"))->create('form_element_attrs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('form_element_id')->constrained('form_elements');
-            $table->string('placeholder');
-            $table->string('default_value');
-            $table->boolean('attr_required');
-            $table->string('attr_min');
-            $table->string('attr_max');
+            $table->string('placeholder')->nullable();
+            $table->string('default_value')->nullable();
+            $table->boolean('attr_required')->default(false);
+            $table->string('attr_min')->nullable();
+            $table->string('attr_max')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

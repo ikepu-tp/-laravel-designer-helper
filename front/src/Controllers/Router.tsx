@@ -59,6 +59,11 @@ import {
 	FormSettingStoreController,
 } from './forms/FormSettingController';
 import { FormIndexController, FormShowController, FormStoreController } from './forms/FormController';
+import {
+	FormElementIndexController,
+	FormElementShowController,
+	FormElementStoreController,
+} from './forms/FormElementController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -167,6 +172,13 @@ export default function Router(): React.ReactElement {
 						<Route path=":form">
 							<Route index element={<FormShowController />} />
 							<Route path="edit" element={<FormStoreController />} />
+							<Route path="form_element">
+								<Route index element={<FormElementIndexController />} />
+								<Route path=":form_element">
+									<Route index element={<FormElementShowController />} />
+									<Route path="edit" element={<FormElementStoreController />} />
+								</Route>
+							</Route>
 						</Route>
 					</Route>
 				</Route>

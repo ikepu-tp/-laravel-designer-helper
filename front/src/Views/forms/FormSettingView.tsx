@@ -45,7 +45,7 @@ function FormSettingListItem(props: { projectId: string; item: FormSettingResour
 		</tr>
 	);
 }
-function FormSettingListParent(props: PropsWithChildren): ReactElement {
+export function FormSettingListParent(props: PropsWithChildren): ReactElement {
 	return (
 		<>
 			<Table striped hover>

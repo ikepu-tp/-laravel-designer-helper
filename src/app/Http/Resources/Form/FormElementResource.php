@@ -32,7 +32,7 @@ class FormElementResource extends JsonResource
             "name" => $this->resource->name,
             "type" => (new FormSettingResource($this->resource->formSetting))->createArray(),
             "note" => $this->resource->note,
-            "attributes" => (new FormElementAttrResource($this->resource->formElementAttrs))->createArray(),
+            "attributes" => (new FormElementAttrResource($this->resource->formElementAttr))->createArray(),
             "created_at" => $this->resource->created_at,
             "updated_at" => $this->resource->updated_at,
         ];

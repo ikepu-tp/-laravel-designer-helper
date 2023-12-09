@@ -50,7 +50,7 @@ Route::scopeBindings()->prefix("designers")->middleware(config("designer.middlew
             });
             Route::prefix("forms")->group(function () {
                 Route::apiResource("settings", FormSettingController::class)->parameter("settings", "form_setting")->names("form.setting");
-                Route::apiResource("forms.elements", FormElementController::class)->parameter("elements", "form_element")->names("form.element");
+                Route::apiResource("{form}/elements", FormElementController::class)->parameter("elements", "form_element")->names("form.element");
                 Route::apiResource("", FormController::class)->parameter("", "form")->names("form");
             });
         });

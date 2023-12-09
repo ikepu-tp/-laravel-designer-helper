@@ -10,6 +10,7 @@ import TextWrapper from '~/components/TextWrapper';
 import { ParamIndexType, ResponseIndexType } from '~/Models/interfaces';
 import ListView from '~/components/ListView';
 import { ScreenListParent } from '../screens/ScreenView';
+import { FormElementIndexController } from '~/Controllers/forms/FormElementController';
 
 export type FormIndexViewProps = {
 	project: string;
@@ -128,7 +129,6 @@ export function FormStoreView(props: StoreViewProps<FormStoreResource> & FormSto
 				name="note"
 				value={props.Resource.note}
 				onChange={props.changeResourceStr}
-				required
 			/>
 		</StoreView>
 	);
@@ -164,6 +164,7 @@ export function FormShowView(props: ShowViewProps<FormResource> & FormShowViewPr
 					</tr>
 				</tbody>
 			</Table>
+			<FormElementIndexController />
 		</>
 	);
 }

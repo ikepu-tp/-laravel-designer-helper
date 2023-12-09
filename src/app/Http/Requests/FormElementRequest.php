@@ -30,9 +30,9 @@ class FormElementRequest extends BaseFormRequest
             "attributes" => ["array", "required"],
             "attributes.placeholder" => ["nullable", "string", "max:250"],
             "attributes.default_value" => ["nullable", "string", "max:250"],
-            "attributes.attr_required" => ["required", "boolean"],
-            "attributes.attr_min" => ["required", "numeric"],
-            "attributes.attr_max" => ["required", "numeric"],
+            "attributes.attr_required" => ["nullable", "boolean"],
+            "attributes.attr_min" => ["nullable", "string"],
+            "attributes.attr_max" => ["nullable", "string"],
         ];
     }
 

@@ -57,7 +57,7 @@ class FormElementController extends BaseController
      */
     public function show(FormElementRequest $formElementRequest, Project $project, Form $form, Form_element $form_element)
     {
-        $this->model = $form;
+        $this->model = $form_element;
         return Resource::success(new FormElementResource($this->model));
     }
 
