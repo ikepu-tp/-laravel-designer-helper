@@ -29,12 +29,13 @@ jobs:
           cd front
           yarn install
           yarn build
+          cd ..
 
       - name: push branch
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add ./../src/resources/front
+          git add ./src/resources/front
           git commit -m "build"
           git push -u origin
 
