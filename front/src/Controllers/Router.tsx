@@ -53,6 +53,11 @@ import {
 	ExceptionShowController,
 	ExceptionStoreController,
 } from './exceptions/ExceptionController';
+import {
+	FormSettingIndexController,
+	FormSettingShowController,
+	FormSettingStoreController,
+} from './forms/FormSettingController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -148,7 +153,13 @@ export default function Router(): React.ReactElement {
 							<Route path="edit" element={<ExceptionStoreController />} />
 						</Route>
 					</Route>
-					<Route path="form"></Route>
+					<Route path="form_setting">
+						<Route index element={<FormSettingIndexController />} />
+						<Route path=":form_setting">
+							<Route index element={<FormSettingShowController />} />
+							<Route path="edit" element={<FormSettingStoreController />} />
+						</Route>
+					</Route>
 				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>

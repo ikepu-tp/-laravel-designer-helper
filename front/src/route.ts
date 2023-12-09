@@ -40,6 +40,10 @@ export const routes: { [s: string]: string } = {
 	'exception.index': '/project/{project}/exception',
 	'exception.store': '/project/{project}/exception/{exception}/edit',
 	'exception.show': '/project/{project}/exception/{exception}',
+
+	'form_setting.index': '/project/{project}/form_setting',
+	'form_setting.store': '/project/{project}/form_setting/{form_setting}/edit',
+	'form_setting.show': '/project/{project}/form_setting/{form_setting}',
 };
 export default function route(route_name: keyof typeof routes, parameters: ParamType = {}): string {
 	if (!routes[route_name]) throw new Error('存在しないパスです');
