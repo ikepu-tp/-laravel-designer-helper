@@ -30,7 +30,7 @@ class FormResource extends JsonResource
         return [
             "id" => $this->resource->id,
             "name" => $this->resource->name,
-            "screens" => ScreenResource::collection([$this->resource->screen()]),
+            "screens" => ScreenResource::collection([$this->resource->screen]),
             "note" => $this->resource->note,
             "created_at" => $this->resource->created_at,
             "updated_at" => $this->resource->updated_at,

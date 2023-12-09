@@ -24,10 +24,10 @@ class ExceptionRequest extends FormRequest
         if (!$this->routeIs(["*.store", "*.update"])) return [];
         return [
             "name" => ["required", "string", "max:30"],
-            "http_code" => ["nullable", "string"],
-            "error_code" => ["nullable", "string"],
-            "abstract" => ["nullable", "string"],
-            "title" => ["nullable", "string"],
+            "http_code" => ["required", "string"],
+            "error_code" => ["required", "string"],
+            "abstract" => ["required", "string"],
+            "title" => ["required", "string"],
             "default_message" => ["nullable", "string"],
             "note" => ["nullable", "string"],
         ];

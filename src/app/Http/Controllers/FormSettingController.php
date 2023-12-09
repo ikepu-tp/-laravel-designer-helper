@@ -8,13 +8,12 @@ use ikepu_tp\DesignerHelper\app\Exceptions\Error\SaveFailedException;
 use ikepu_tp\DesignerHelper\app\Http\Requests\FormSettingRequest;
 use ikepu_tp\DesignerHelper\app\Http\Resources\Form\FormSettingResource;
 use ikepu_tp\DesignerHelper\app\Http\Resources\Resource;
-use ikepu_tp\DesignerHelper\app\Models\Exception;
 use ikepu_tp\DesignerHelper\app\Models\Form_setting;
 use ikepu_tp\DesignerHelper\app\Models\Project;
 
 class FormSettingController extends BaseController
 {
-    /** @var Exception|Exception[] */
+    /** @var Form_setting|Form_setting[] */
     public $model;
 
     /**
@@ -22,7 +21,7 @@ class FormSettingController extends BaseController
      */
     public function index(FormSettingRequest $formSettingRequest, Project $project)
     {
-        $this->model = $project->screens();
+        $this->model = $project->formSettings();
         return Resource::pagination($this->model, FormSettingResource::class);
     }
 
@@ -31,7 +30,7 @@ class FormSettingController extends BaseController
      */
     public function store(FormSettingRequest $formSettingRequest, Project $project)
     {
-        $this->model = new Exception();
+        $this->model = new Form_setting();
         $this->model->fill(
             [
                 "project_id" => $project->id,

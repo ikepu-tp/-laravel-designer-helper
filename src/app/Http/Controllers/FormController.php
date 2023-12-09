@@ -8,7 +8,6 @@ use ikepu_tp\DesignerHelper\app\Exceptions\Error\SaveFailedException;
 use ikepu_tp\DesignerHelper\app\Http\Requests\FormRequest;
 use ikepu_tp\DesignerHelper\app\Http\Resources\Form\FormResource;
 use ikepu_tp\DesignerHelper\app\Http\Resources\Resource;
-use ikepu_tp\DesignerHelper\app\Models\Exception;
 use ikepu_tp\DesignerHelper\app\Models\Form;
 use ikepu_tp\DesignerHelper\app\Models\Project;
 
@@ -22,7 +21,7 @@ class FormController extends BaseController
      */
     public function index(FormRequest $formRequest, Project $project)
     {
-        $this->model = $project->screens();
+        $this->model = $project->forms();
         return Resource::pagination($this->model, FormResource::class);
     }
 
@@ -31,10 +30,11 @@ class FormController extends BaseController
      */
     public function store(FormRequest $formRequest, Project $project)
     {
-        $this->model = new Exception();
+        $this->model = new Form();
         $this->model->fill(
             [
                 "project_id" => $project->id,
+                "screen_id" => $formRequest->validated("screens.0.id"),
             ]
         );
         $this->model->fill($formRequest->validated());
@@ -57,6 +57,12 @@ class FormController extends BaseController
     public function update(FormRequest $formRequest, Project $project, Form $form)
     {
         $this->model = $form;
+        $this->model->fill(
+            [
+                "project_id" => $project->id,
+                "screen_id" => $formRequest->validated("screens.0.id"),
+            ]
+        );
         $this->model->fill($formRequest->validated());
         if (!$this->model->save()) throw new SaveFailedException();
         return Resource::success(new FormResource($this->model));

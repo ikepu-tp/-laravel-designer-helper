@@ -17,7 +17,7 @@ use ikepu_tp\DesignerHelper\database\factories\Form_elementFactory;
  * @property Carbon $deleted_at
  *
  * @property-read Form $form
- * @property-read Form_element_attr[] $formElementAttrs
+ * @property-read Form_element_attr $formElementAttr
  * @property-read Form_setting $formSetting
  */
 class Form_element extends BaseModel
@@ -50,11 +50,11 @@ class Form_element extends BaseModel
     }
 
     /**
-     * @return  \Illuminate\Database\Eloquent\Relations\HasMany<Form_element_attr>|Form_element_attr[]
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne<Form_element_attr>|Form_element_attr
      */
-    public function formElementAttrs()
+    public function formElementAttr()
     {
-        return $this->hasMany(Form_element_attr::class);
+        return $this->belongsTo(Form_element_attr::class);
     }
 
     /**

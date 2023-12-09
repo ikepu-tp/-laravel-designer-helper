@@ -21,7 +21,7 @@ class ExceptionController extends BaseController
      */
     public function index(ExceptionRequest $exceptionRequest, Project $project)
     {
-        $this->model = $project->screens();
+        $this->model = $project->exceptions();
         return Resource::pagination($this->model, ExceptionResource::class);
     }
 

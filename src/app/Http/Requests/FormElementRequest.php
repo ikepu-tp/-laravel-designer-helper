@@ -27,6 +27,7 @@ class FormElementRequest extends BaseFormRequest
             "name" => ["required", "string", "max:50"],
             "type.id" => ["required", "numeric", "exists:form_settings,id"],
             "note" => ["nullable", "string"],
+            "attributes" => ["array", "required"],
             "attributes.placeholder" => ["nullable", "string", "max:250"],
             "attributes.default_value" => ["nullable", "string", "max:250"],
             "attributes.attr_required" => ["required", "boolean"],
