@@ -51,7 +51,7 @@ import {
 
 export default function Router(): React.ReactElement {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="designers">
 			<Routes>
 				<Route index element={<ProjectIndexController />} />
 				<Route path="project/:project">

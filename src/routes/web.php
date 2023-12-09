@@ -4,6 +4,7 @@ use ikepu_tp\DesignerHelper\app\Http\Controllers\ExceptionController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FormController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FormElementController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FormSettingController;
+use ikepu_tp\DesignerHelper\app\Http\Controllers\FrontController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionCategoryController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionClassController;
 use ikepu_tp\DesignerHelper\app\Http\Controllers\FunctionController;
@@ -21,16 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::scopeBindings()->prefix("designers")->middleware(config("designer.middleware", []))->group(function () {
     //WEB
     Route::middleware(config("designer.web_middleware"))->group(function () {
-        Route::fallback(function ($path) {
-            $file_path = __DIR__ . "/../resources/front/{$path}";
-            if (!file_exists($file_path)) $file_path = __DIR__ . "/../resources/front/index.html";
-            $formats = [
-                "html" => "text/html",
-                "css" => "text/css",
-                "js" => "text/javascript",
-            ];
-            return response(file_get_contents($file_path))->header("Content-Type", $formats[pathinfo($file_path, PATHINFO_EXTENSION)] ?? "text/html");
-        });
+        Route::get("", [FrontController::class, "show"])->name("designer.front.home");
+        Route::fallback([FrontController::class, "show"])->name("designer.front");
     });
     //API
     Route::scopeBindings()->middleware(config("designer.api_middleware"))->prefix("v1")->group(function () {
