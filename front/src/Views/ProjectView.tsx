@@ -174,6 +174,7 @@ export function ProjectShowView(props: ShowViewProps<ProjectResource> & ProjectS
 							route_param={{ project: props.Resource.id }}
 							children="フォーム設定"
 						/>
+						<MenuLinkItem route_name="form.index" route_param={{ project: props.Resource.id }} children="フォーム" />
 					</ListGroup>
 				</Card.Body>
 			</Card>

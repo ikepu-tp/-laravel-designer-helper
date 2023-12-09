@@ -54,7 +54,7 @@ function ScreenListItem(props: { projectId: string; item: ScreenResource }): Rea
 		</tr>
 	);
 }
-function ScreenListParent(props: PropsWithChildren): ReactElement {
+export function ScreenListParent(props: PropsWithChildren): ReactElement {
 	return (
 		<>
 			<Table striped hover>
