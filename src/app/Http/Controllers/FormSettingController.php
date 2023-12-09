@@ -5,10 +5,11 @@ namespace ikepu_tp\DesignerHelper\app\Http\Controllers;
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\DesignerHelper\app\Exceptions\Error\DeleteFailedException;
 use ikepu_tp\DesignerHelper\app\Exceptions\Error\SaveFailedException;
-use ikepu_tp\DesignerHelper\app\Http\Requests\ExceptionRequest;
-use ikepu_tp\DesignerHelper\app\Http\Resources\Exception\ExceptionResource;
+use ikepu_tp\DesignerHelper\app\Http\Requests\FormSettingRequest;
+use ikepu_tp\DesignerHelper\app\Http\Resources\Form\FormSettingResource;
 use ikepu_tp\DesignerHelper\app\Http\Resources\Resource;
 use ikepu_tp\DesignerHelper\app\Models\Exception;
+use ikepu_tp\DesignerHelper\app\Models\Form_setting;
 use ikepu_tp\DesignerHelper\app\Models\Project;
 
 class FormSettingController extends BaseController
@@ -19,16 +20,16 @@ class FormSettingController extends BaseController
     /**
      * Display a listing of the resource.
      */
-    public function index(ExceptionRequest $exceptionRequest, Project $project)
+    public function index(FormSettingRequest $formSettingRequest, Project $project)
     {
         $this->model = $project->screens();
-        return Resource::pagination($this->model, ExceptionResource::class);
+        return Resource::pagination($this->model, FormSettingResource::class);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ExceptionRequest $exceptionRequest, Project $project)
+    public function store(FormSettingRequest $formSettingRequest, Project $project)
     {
         $this->model = new Exception();
         $this->model->fill(
@@ -36,37 +37,37 @@ class FormSettingController extends BaseController
                 "project_id" => $project->id,
             ]
         );
-        $this->model->fill($exceptionRequest->validated());
+        $this->model->fill($formSettingRequest->validated());
         if (!$this->model->save()) throw new SaveFailedException();
-        return Resource::create(new ExceptionResource($this->model));
+        return Resource::create(new FormSettingResource($this->model));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(ExceptionRequest $exceptionRequest, Project $project, Exception $exception)
+    public function show(FormSettingRequest $formSettingRequest, Project $project, Form_setting $form_setting)
     {
-        $this->model = $exception;
-        return Resource::success(new ExceptionResource($this->model));
+        $this->model = $form_setting;
+        return Resource::success(new FormSettingResource($this->model));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(ExceptionRequest $exceptionRequest, Project $project, Exception $exception)
+    public function update(FormSettingRequest $formSettingRequest, Project $project, Form_setting $form_setting)
     {
-        $this->model = $exception;
-        $this->model->fill($exceptionRequest->validated());
+        $this->model = $form_setting;
+        $this->model->fill($formSettingRequest->validated());
         if (!$this->model->save()) throw new SaveFailedException();
-        return Resource::success(new ExceptionResource($this->model));
+        return Resource::success(new FormSettingResource($this->model));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ExceptionRequest $exceptionRequest, Project $project, Exception $exception)
+    public function destroy(FormSettingRequest $formSettingRequest, Project $project, Form_setting $form_setting)
     {
-        if (!$exception->delete()) throw new DeleteFailedException();
+        if (!$form_setting->delete()) throw new DeleteFailedException();
         return Resource::NoContent();
     }
 }
