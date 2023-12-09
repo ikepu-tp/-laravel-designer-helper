@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::connection(config("designer.connection"))->create('table_settings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id')->constrained('projects');
+            $table->string('name', 50);
             $table->string('model_cast', 50);
             $table->string('db_type', 50);
             $table->string('php_type', 50);

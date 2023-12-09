@@ -15,11 +15,13 @@ class TableSettingTest extends TestCase
     public $routeName = "table.setting";
     public $resource = [
         "id",
+        "name",
         "model_cast",
         "db_type",
         "php_type",
     ];
     public $data = [
+        "name" => "string",
         "model_cast" => "string",
         "db_type" => "varchar",
         "php_type" => "string",

@@ -9,6 +9,11 @@ properties:
     description: テーブル設定ID
     example: 1
     readOnly: true
+  name:
+    type: string
+    description: 名前
+    example: 文字列
+    maxLength: 50
   model_cast:
     type: string
     description: モデルキャスト型

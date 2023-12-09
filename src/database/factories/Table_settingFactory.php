@@ -22,6 +22,7 @@ class Table_settingFactory extends Factory
     {
         return [
             "project_id" => Project::factory()->create()->id,
+            "name" => "文字列",
             "model_cast" => "string",
             "db_type" => "varchar",
             "php_type" => "string",

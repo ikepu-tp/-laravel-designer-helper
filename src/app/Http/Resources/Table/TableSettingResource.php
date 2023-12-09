@@ -28,6 +28,7 @@ class TableSettingResource extends JsonResource
 
         return [
             "id" => $this->resource->id,
+            "name" => $this->resource->name,
             "model_cast" => $this->resource->model_cast,
             "db_type" => $this->resource->db_type,
             "php_type" => $this->resource->php_type,

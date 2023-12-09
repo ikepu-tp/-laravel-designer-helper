@@ -8,6 +8,7 @@ use ikepu_tp\DesignerHelper\database\factories\Table_settingFactory;
 /**
  * @property int $id
  * @property int $project_id
+ * @property string $name
  * @property string $model_cast
  * @property string $db_type
  * @property string $php_type
@@ -26,6 +27,7 @@ class Table_setting extends BaseModel
      */
     protected $casts = [
         'id' => 'integer',
+        'name' => 'string',
         'model_cast' => 'string',
         'db_type' => 'string',
         'php_type' => 'string',

@@ -23,6 +23,7 @@ class TableSettingRequest extends FormRequest
     {
         if (!$this->routeIs(["*.store", "*.update"])) return [];
         return [
+            "name" => ["required", "string", "max:50"],
             "model_cast" => ["required", "string", "max:50"],
             "db_type" => ["required", "string", "max:50"],
             "php_type" => ["required", "string", "max:50"],
