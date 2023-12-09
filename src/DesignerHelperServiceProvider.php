@@ -3,11 +3,9 @@
 namespace ikepu_tp\DesignerHelper;
 
 use ikepu_tp\DesignerHelper\app\Models\Project;
-use ikepu_tp\DesignerHelper\app\Models\Table_setting;
+use ikepu_tp\DesignerHelper\app\Observers\ProjectObserver;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Route;
 
 class DesignerHelperServiceProvider extends ServiceProvider
 {
@@ -24,13 +22,12 @@ class DesignerHelperServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Project::observe(ProjectObserver::class);
+
         $this->registerPublishing();
         $this->defineRoutes();
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        Route::model("project", Project::class);
-        Route::model("table_setting", Table_setting::class);
         $this->loadViewsFrom(__DIR__ . "/resources/views", "DesignerHelper");
-        //Paginator::useBootstrap();
         //Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "DesignerHelper");
     }
 
