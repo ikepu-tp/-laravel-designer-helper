@@ -48,6 +48,11 @@ import {
 	ScreenProgressShowController,
 	ScreenProgressStoreController,
 } from './screens/ScreenProgressController';
+import {
+	ExceptionIndexController,
+	ExceptionShowController,
+	ExceptionStoreController,
+} from './exceptions/ExceptionController';
 
 export default function Router(): React.ReactElement {
 	return (
@@ -136,7 +141,13 @@ export default function Router(): React.ReactElement {
 						</Route>
 					</Route>
 
-					<Route path="exception"></Route>
+					<Route path="exception">
+						<Route index element={<ExceptionIndexController />} />
+						<Route path=":exception">
+							<Route index element={<ExceptionShowController />} />
+							<Route path="edit" element={<ExceptionStoreController />} />
+						</Route>
+					</Route>
 					<Route path="form"></Route>
 				</Route>
 				<Route path="*" element={<Error />} />

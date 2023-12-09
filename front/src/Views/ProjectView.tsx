@@ -158,6 +158,14 @@ export function ProjectShowView(props: ShowViewProps<ProjectResource> & ProjectS
 				</Card.Body>
 			</Card>
 			<Card className="mb-3">
+				<Card.Header>例外関連</Card.Header>
+				<Card.Body>
+					<ListGroup className="mt-3">
+						<MenuLinkItem route_name="exception.index" route_param={{ project: props.Resource.id }} children="例外" />
+					</ListGroup>
+				</Card.Body>
+			</Card>
+			<Card className="mb-3">
 				<Card.Header>フォーム関連</Card.Header>
 				<Card.Body>
 					<ListGroup className="mt-3"></ListGroup>

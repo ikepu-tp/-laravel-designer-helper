@@ -36,6 +36,10 @@ export const routes: { [s: string]: string } = {
 	'screen_progress.index': '/project/{project}/screen_progress',
 	'screen_progress.store': '/project/{project}/screen_progress/{screen_progress}/edit',
 	'screen_progress.show': '/project/{project}/screen_progress/{screen_progress}',
+
+	'exception.index': '/project/{project}/exception',
+	'exception.store': '/project/{project}/exception/{exception}/edit',
+	'exception.show': '/project/{project}/exception/{exception}',
 };
 export default function route(route_name: keyof typeof routes, parameters: ParamType = {}): string {
 	if (!routes[route_name]) throw new Error('存在しないパスです');
